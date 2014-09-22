@@ -1,0 +1,31 @@
+gameoverlay.styles
+{
+	include "resource/styles/steam.styles"
+	
+	colors 
+	{
+		mostly_black "51 51 51 240"
+		semi_black "51 51 51 128"
+		semi_gray "45 45 45 220"
+		Notifications.PanelPosition     "BottomRight"  // osx has toast in the upper right, but in-overlay should not.
+	}
+	
+	styles 
+	{
+		detailsbox
+		{
+			bgcolor=black
+			render_bg
+			{
+				//0="gradient( x0, y0, x1, y1, mostly_black, semi_gray )"
+			}		
+		}	
+		
+		detailsboxtitle
+		{
+			font-size=27
+			font-style=uppercase
+			textcolor=Text
+		}
+	}
+}
