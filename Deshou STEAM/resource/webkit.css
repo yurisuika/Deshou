@@ -5,8 +5,8 @@
 	
 ::-webkit-scrollbar,
 ::-webkit-scrollbar-corner {
-	width: 15px;
-	height: 15px;
+	max-width: 15px;
+	max-height: 15px;
 	background: #333333;
 }
 
@@ -18,8 +18,9 @@
 
 ::-webkit-scrollbar-thumb {
 	background-color: #5D5D5D;
-	padding-top:50px;
-	padding-bottom:50px;
+	border: 6px solid #333333;
+	background-clip: content-box;
+	
 }
 
 ::-webkit-scrollbar-track:vertical {
