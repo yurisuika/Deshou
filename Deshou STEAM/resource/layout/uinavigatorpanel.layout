@@ -161,7 +161,7 @@
 		}
 		"URLBar"
 		{
-			"ControlName"		"TextEntry"
+			"ControlName"		"Text"
 			style="TextEntryURL"
 			group="url"
 		}
