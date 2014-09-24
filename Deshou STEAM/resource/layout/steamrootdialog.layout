@@ -707,7 +707,7 @@
 		
 		AccountURLStyle
 		{
-		  textcolor=none
+		  textcolor=textdisabled
 		  padding-top=-4
 		}
 		
