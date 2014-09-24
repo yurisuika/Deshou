@@ -8,6 +8,13 @@
 		style="ClientLogo"
 		zpos=-5
 		}
+		
+		"fullscreen"
+		{
+		"ControlName" 	"Button"
+		style="FullscreenButton"
+		command="fullscreen"
+		}
 	
 		
 		"New"
@@ -672,6 +679,22 @@
 			
 		}
 		
+		FullscreenButton [!$OSX]
+		{
+			padding-left=0
+			padding-top=0 
+			padding-right=0
+			padding-bottom=0
+		}
+
+		FullscreenButton [$OSX]
+		{
+			padding-left=0
+			padding-top=3
+			padding-right=0
+			padding-bottom=0
+		}
+		
 		inboxmenuitem
 		{
 			textcolor=inbox_inactive_text
@@ -684,7 +707,7 @@
 		
 		AccountURLStyle
 		{
-		  textcolor=textdisabled
+		  textcolor=none
 		  padding-top=-4
 		}
 		
@@ -748,8 +771,11 @@
 		
 		place [!$OSX] { control="MenuBar" align=top margin-top=2 margin-left=2 }
 			
-		place [!$OSX] { control="account_balance, account_balance_seperator, account_URL, universe_label" align=right margin-top=9 margin-right=83 spacing=7 }	
-		place [$OSX]  { control="account_balance, account_balance_seperator, account_URL, universe_label" align=right margin-top=9 margin-right=15 spacing=7 }
+		place [!$OSX] { control="account_balance, account_balance_seperator, account_URL, universe_label, fullscreen" align=right margin-top=9 margin-right=83 spacing=7 }	
+		place [$OSX]  { control="account_balance, account_balance_seperator, account_URL, universe_label, fullscreen" align=right margin-top=9 margin-right=15 spacing=7 }
+		
+		place [!$OSX] { control="fullscreen" tooltiptext="#tooltip_view_fullscreen" align=right y=7 height=20 spacing=0 margin-right=78 margin-top=1 width=30 region="bigpicture"}
+		place [$OSX] { control="fullscreen" tooltiptext="#tooltip_view_fullscreen" align=right y=7 height=20 spacing=0 margin-right=8 margin-top=1 width=30 region="bigpicture"}
 		
 		place { control="InboxButton" align=right end-right="account_balance" margin-top=1 margin-right=20 height=26 }
 		place { control="ParentalLockButton" align=right end-right="InboxButton" margin-top=1 margin-right=10 height=26 }

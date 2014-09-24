@@ -31,12 +31,7 @@
 			command="Forward"
 
 		}
-		"fullscreen"
-		{
-			"ControlName"		"Button"
-			style="FullscreenButton"
-			command="fullscreen"
-		}
+		
 
 
 		"refresh"
@@ -201,13 +196,6 @@
 	
 	styles
 	{
-		FullscreenButton
-		{
-			padding-left=0
-			padding-top=0
-			padding-right=0
-			padding-bottom=0
-		}
 		
 		
 		grouper
@@ -656,12 +644,12 @@
 		
 		"CSteamRootDialog TextEntryURL"
 		{
-			textcolor="buttonborder"		
+			textcolor="text"		
 		}
 		
 		"CSteamRootDialog TextEntryURL:hover"
 		{
-			textcolor="texthover"
+			textcolor="text"
 		}
 		
 		CUINavButtonNew
@@ -848,9 +836,6 @@
 		place [!$OSX] { control="back,forward" x=6 y=10 height=30 width=30 spacing=8 margin-right=5 margin-top=0 }
 		place [$OSX] { control="back,forward" x=4 y=10 height=30 width=30 spacing=8 margin-right=5 margin-top=0 }
 
-		region { name="bigpicture" width=100 align=right margin-right=-6 margin-left=6 margin-top=-22 height=104 }
-		
-		place { control="fullscreen" tooltiptext="#tooltip_view_list" align=right y=40 height=64 spacing=4 margin-right=4 margin-top=0 width=92 region="bigpicture"}
 	
 		place { control="PageLoadThrobber" align=right y=54 height=20 width=20  margin-right=88 margin-top=1 }
 

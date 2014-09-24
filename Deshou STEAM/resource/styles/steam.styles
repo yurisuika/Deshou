@@ -787,7 +787,7 @@ steam.styles
     {
       		bgcolor="black"
 		render_bg {}
-		//image="graphics/win32_win_min"
+		image="graphics/win32_win_min"
 		image="graphics/osx_win_dis" [$OSX]
     }
     
@@ -795,7 +795,7 @@ steam.styles
     {  
 		render_bg {}
       		bgcolor="black"
-		//image="graphics/win32_win_min_hover"
+		image="graphics/win32_win_min_hover"
 		image="graphics/osx_min_hov" [$OSX]
     }
 
@@ -825,7 +825,7 @@ steam.styles
     {
       		bgcolor="black"
 		render_bg {}
-		//image="graphics/win32_win_max"
+		image="graphics/win32_win_max"
 		image="graphics/osx_win_dis" [$OSX]
     }
 
@@ -833,7 +833,7 @@ steam.styles
     {
 		render_bg {}
       		bgcolor="black"
-		//image="graphics/win32_win_max_hover"
+		image="graphics/win32_win_max_hover"
 		image="graphics/osx_max_hov" [$OSX]
     }
 
@@ -841,7 +841,7 @@ steam.styles
     {
 		render_bg {}
       		bgcolor="black"
-		//image="graphics/win32_win_max"
+		image="graphics/win32_win_max"
 		image="graphics/osx_max_def" [$OSX]
     }
 
@@ -849,7 +849,7 @@ steam.styles
     {
 		render_bg {}
       		bgcolor="black"
-		//image="graphics/win32_win_max_hover"
+		image="graphics/win32_win_max_hover"
 		image="graphics/osx_max_hov" [$OSX]
     }
 
@@ -857,7 +857,7 @@ steam.styles
     {
 		render_bg {}
       		bgcolor="black"
-		//image="graphics/win32_win_max_hover"
+		image="graphics/win32_win_max_hover"
 		image="graphics/osx_max_down" [$OSX]
     }
 
@@ -866,7 +866,7 @@ steam.styles
     {
       		bgcolor="black"
 		render_bg {}
-		//image="graphics/win32_win_restore"
+		image="graphics/win32_win_restore"
 		image="graphics/osx_win_dis" [$OSX]
     }
 
@@ -874,7 +874,7 @@ steam.styles
     {
 		render_bg {}
       		bgcolor="black"
-		//image="graphics/win32_win_restore_hover"
+		image="graphics/win32_win_restore_hover"
 		image="graphics/osx_max_hov" [$OSX]
     }
 
@@ -882,7 +882,7 @@ steam.styles
     {
 		render_bg {}
       		bgcolor="black"
-		//image="graphics/win32_win_restore"
+		image="graphics/win32_win_restore"
     		image="graphics/osx_max_def" [$OSX]
     }
 
@@ -890,7 +890,7 @@ steam.styles
     {
 		render_bg {}
       		bgcolor="black"
-		//image="graphics/win32_win_restore_hover"
+		image="graphics/win32_win_restore_hover"
 		image="graphics/osx_max_hov" [$OSX]
     }
 
@@ -898,7 +898,7 @@ steam.styles
     {
 		render_bg {}
       		bgcolor="black"
-		//image="graphics/win32_win_restore_hover"
+		image="graphics/win32_win_restore_hover"
 		image="graphics/osx_max_down" [$OSX]
     }
 
@@ -906,7 +906,7 @@ steam.styles
     {
       		bgcolor="black"
 		render_bg {}
-		//image="graphics/win32_win_close"
+		image="graphics/win32_win_close"
 		image="graphics/osx_win_dis" [$OSX]
     }
 
@@ -914,7 +914,7 @@ steam.styles
     {
 		render_bg {}
       		bgcolor="black"
-		//image="graphics/win32_win_close_hover"
+		image="graphics/win32_win_close_hover"
 		image="graphics/osx_close_hov" [$OSX]
     }
     
@@ -943,7 +943,7 @@ steam.styles
     {
 		render_bg {}
       		bgcolor="black"
-		//image="graphics/win32_win_close_disabled" 
+		image="graphics/win32_win_close_disabled" 
 		image="graphics/osx_win_dis" [$OSX]
     }
 
@@ -2857,7 +2857,6 @@ steam.styles
     FullscreenButton
     {
       bgcolor=none
-      inset="-4 -3 0 0"
       render_bg={}
       image="graphics/icon_button_fullscreen"
     }
