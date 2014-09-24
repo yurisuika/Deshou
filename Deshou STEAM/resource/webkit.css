@@ -1,12 +1,14 @@
-/*body {
+/*body{
     background: #333333 !important;
-	}
-	*/
-	
+	background-image: none !important;
+	}	
+*/	
 ::-webkit-scrollbar,
 ::-webkit-scrollbar-corner {
-	max-width: 15px;
-	max-height: 15px;
+	max-width: 19px;
+	max-height: 19px;
+	min-width: 19px;
+	min-height: 19px;
 	background: #333333;
 }
 
@@ -17,7 +19,7 @@
 	}
 
 ::-webkit-scrollbar-thumb {
-	background-color: #5D5D5D;
+	background-color: #4D4D4D;
 	border: 6px solid #333333;
 	background-clip: content-box;
 	
@@ -35,7 +37,7 @@
 
 /*::-webkit-scrollbar-button:hover, */
 ::-webkit-scrollbar-thumb:hover {
-	background-color: #5D5D5D;
+	background-color: #4D4D4D;
 }
 
 ::-webkit-scrollbar-thumb {
