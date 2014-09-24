@@ -86,13 +86,13 @@
 		place { control=LibraryHeader region=content y=20 }
 		place { control=LibraryList region=content width=max y=40 height=80}
 		
-		place { control=AddLibraryButton,RemoveLibraryButton,StartCrawlingButton region=content y=130 dir=right spacing=10 }
+		place { control=AddLibraryButton,RemoveLibraryButton,StartCrawlingButton,DatabaseInfoLabel region=content y=130 dir=right spacing=10 }
 		place { control=LibraryDivider region=content y=165 width=max }
 		
 		place { control=DatabaseHeader region=content y=175 }
 		place { control=DatabaseCrawlAtStartup region=content y=190 }	
 		place { control=DatabaseCrawlSteamInstallFolders region=content y=190 x=250 }
-		place { control=ResetDatabaseButton,DatabaseInfoLabel region=content y=225 dir=right spacing=10 }
+		place { control=ResetDatabaseButton region=content y=225 dir=right spacing=10 }
 		place { control=DatabaseDivider region=content y=260 width=max }
 		
 		place { control=VolumeHeader region=content y=270 }
