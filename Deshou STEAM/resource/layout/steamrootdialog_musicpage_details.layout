@@ -7,6 +7,7 @@
 		DetailsBorder { controlname=EditablePanel style="DetailsBorderPanel" zpos="-1" }
 		EmptyDatabaseText { controlname="RichText" text="#Music_NoLibrary" style="EmptyDatabaseText" }
 		CrawlingText { controlname="RichText" style="CrawlingText" }
+	CMusicPage_Details_Content { controlname="CMusicPage_Details_Content" }
 	}
 
 	styles
@@ -141,6 +142,9 @@
 		place { control=*MusicPageDetailsAlbum region=details width=max dir=down spacing=10 }
 	
 		
+	region	{ name="content" y=0 x=0 width=max height=max }
+	place	{ control=CMusicPage_Details_Content region=content x=0 y=0 width=max height=max }
+	
 	}
 
 }
