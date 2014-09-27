@@ -516,7 +516,7 @@
 			render {}
 			render_bg {
 				//0="fill( x0, y0, x1, y1+1, inbox_inactive )"
-				1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification_inactive )"
+				//1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification_inactive )"
 				//2="image( x0, y0, x0, y1, graphics/flag_inactive_left )"
 				//3="image( x1, y0, x1, y1, graphics/flag_inactive_right )"
 				//4="image_scale( x0+3, y0, x1, y0+3, graphics/flag_inactive_top )"
@@ -528,7 +528,7 @@
 		{
 			render_bg {
 				//0="gradient( x0, y0, x1, y1+1, inbox_inactive_hover1, inbox_inactive_hover2  )"
-				1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification_inactive )"
+				//1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification_inactive )"
 				//2="image( x0, y0, x0, y1, graphics/flag_inactive_left_hover )"
 				//3="image( x1, y0, x1, y1, graphics/flag_inactive_right_hover )"
 				//4="image_scale( x0+3, y0, x1, y0+3, graphics/flag_inactive_top_hover )"
@@ -553,7 +553,7 @@
 			inset="0 -3 8 0"
 			render_bg {
 				//0="fill( x0, y0, x1, y1, inbox_active )"
-				1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification )"
+				//1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification )"
 				//2="image( x0, y0, x0, y1, graphics/flag_left )"
 				//3="image( x1, y0, x1, y1, graphics/flag_right )"
 				//4="image_scale( x0+3, y0, x1, y0+3, graphics/flag_top )"
@@ -566,7 +566,7 @@
 			inset="0 -3 8 0"
 			render_bg {
 				//0="gradient( x0, y0, x1, y1, inbox_active_hover1, inbox_active_hover2  )"
-				1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification )"
+				//1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification )"
 				//2="image( x0, y0, x0, y1, graphics/flag_left_hover )"
 				//3="image( x1, y0, x1, y1, graphics/flag_right_hover )"
 				//4="image_scale( x0+3, y0, x1, y0+3, graphics/flag_top_hover )"
@@ -578,7 +578,7 @@
 			inset="0 -3 8 0"
 			render_bg {
 				//0="gradient( x0, y0, x1, y1, inbox_active_hover1, inbox_active_hover2  )"
-				1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification )"
+				//1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification )"
 				//2="image( x0, y0, x0, y1, graphics/flag_left_hover )"
 				//3="image( x1, y0, x1, y1, graphics/flag_right_hover )"
 				//4="image_scale( x0+3, y0, x1, y0+3, graphics/flag_top_hover )"
@@ -844,8 +844,8 @@
 		place [!$OSX] { control="account_balance, account_URL, universe_label, fullscreen" align=right margin-top=12 margin-right=78 spacing=7 }	
 		place [$OSX]  { control="account_balance, account_URL, universe_label, fullscreen" align=right margin-top=12 margin-right=15 spacing=7 }
 	
-		place [!$OSX] { control="fullscreen" tooltiptext="#tooltip_view_fullscreen" align=right y=7 height=20 spacing=0 margin-right=78 margin-top=1 width=30 region="bigpicture"}
-		place [$OSX] { control="fullscreen" tooltiptext="#tooltip_view_fullscreen" align=right y=7 height=20 spacing=0 margin-right=8 margin-top=1 width=30 region="bigpicture"}
+		place [!$OSX] { control="fullscreen" tooltiptext="#tooltip_view_fullscreen" align=right y=7 height=0 spacing=0 margin-right=0 margin-top=1 width=0 region="bigpicture"}
+		place [$OSX] { control="fullscreen" tooltiptext="#tooltip_view_fullscreen" align=right y=7 height=0 spacing=0 margin-right=0 margin-top=1 width=0 region="bigpicture"}
 	
 		place { control="InboxButton" align=right end-right="account_balance" margin-top=4 margin-right=16 height=26 }
 		place { control="ParentalLockButton" align=right end-right="InboxButton" margin-top=7 margin-right=10 height=23 }
