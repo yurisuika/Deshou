@@ -2,13 +2,14 @@
 {
 	controls
 	{
-		"ImageLogo"
+
+			
+		"fullscreen"
 		{
-		"ControlName" 	"Label"
-		style="ClientLogo"
-		zpos=-5
+			"ControlName"		"Button"
+			style="FullscreenButton"
+			command="fullscreen"
 		}
-	
 		
 		"New"
 		{
@@ -85,13 +86,6 @@
 			style="AccountURLStyle"
 		}
 		
-		account_balance_seperator
-		{
-			"ControlName"	"Label"
-			"fieldName"		"account_balance_seperator"
-			"labelText"		"|"
-			style="online_friends"
-		}
 		
 		account_balance
 		{
@@ -99,9 +93,16 @@
 			"fieldName"		"account_balance"
 			"labelText"		""
 			"URLText"		"steam://url/StoreAccount/"
-			style="URLLabelSimple"
+			style="AccountBalanceStyle"
 		}
 		
+		account_balance_seperator
+		{
+			"ControlName"	"Label"
+			"fieldName"		"account_balance_seperator"
+			"labelText"		"|"
+			style="AccountBalanceSeparatorStyle"
+		}
 		
 		universe_label
 		{
@@ -128,7 +129,44 @@
 	}
 	
 	styles
-	{    		
+	{    	
+
+		AccountBalanceStyle
+		{
+		      textcolor="textDisabled"
+		      bgcolor="none"
+		      font-family=basefont
+		      font-size=11
+		      font-weight=normal
+		      font-style=regular
+		}
+
+		AccountBalanceStyle [$OSX]
+		{
+		      textcolor="textDisabled"
+		      bgcolor="none"
+		      font-family=basefont
+		      font-size=11
+		      font-weight=normal
+		      font-style=regular
+		      inset="0 1 0 0"
+		}
+    
+    AccountBalanceStyle:Hover
+		{
+		      textcolor="texthover"
+		}  
+		
+		AccountBalanceSeparatorStyle
+		{
+					textcolor="textDisabled"
+					font-family=basefont
+					font-size=11
+					font-weight=normal
+		      font-style=regular
+					inset="0 0 0 0"
+		}
+			
 		
 		ClientLogo
 		{
@@ -478,7 +516,7 @@
 			render {}
 			render_bg {
 				//0="fill( x0, y0, x1, y1+1, inbox_inactive )"
-				//1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification_inactive )"
+				1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification_inactive )"
 				//2="image( x0, y0, x0, y1, graphics/flag_inactive_left )"
 				//3="image( x1, y0, x1, y1, graphics/flag_inactive_right )"
 				//4="image_scale( x0+3, y0, x1, y0+3, graphics/flag_inactive_top )"
@@ -490,7 +528,7 @@
 		{
 			render_bg {
 				//0="gradient( x0, y0, x1, y1+1, inbox_inactive_hover1, inbox_inactive_hover2  )"
-				//1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification_inactive )"
+				1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification_inactive )"
 				//2="image( x0, y0, x0, y1, graphics/flag_inactive_left_hover )"
 				//3="image( x1, y0, x1, y1, graphics/flag_inactive_right_hover )"
 				//4="image_scale( x0+3, y0, x1, y0+3, graphics/flag_inactive_top_hover )"
@@ -502,7 +540,7 @@
 		{
 			render_bg {
 				//0="gradient( x0, y0, x1, y1, inbox_inactive_hover1, inbox_inactive_hover2  )"
-				//1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification_inactive )"
+				1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification_inactive )"
 				//2="image( x0, y0, x0, y1, graphics/flag_inactive_left_hover )"
 				//3="image( x1, y0, x1, y1, graphics/flag_inactive_right_hover )"
 				//4="image_scale( x0+3, y0, x1, y0+3, graphics/flag_inactive_top_hover )"
@@ -515,7 +553,7 @@
 			inset="0 -3 8 0"
 			render_bg {
 				//0="fill( x0, y0, x1, y1, inbox_active )"
-				//1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification )"
+				1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification )"
 				//2="image( x0, y0, x0, y1, graphics/flag_left )"
 				//3="image( x1, y0, x1, y1, graphics/flag_right )"
 				//4="image_scale( x0+3, y0, x1, y0+3, graphics/flag_top )"
@@ -528,7 +566,7 @@
 			inset="0 -3 8 0"
 			render_bg {
 				//0="gradient( x0, y0, x1, y1, inbox_active_hover1, inbox_active_hover2  )"
-				//1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification )"
+				1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification )"
 				//2="image( x0, y0, x0, y1, graphics/flag_left_hover )"
 				//3="image( x1, y0, x1, y1, graphics/flag_right_hover )"
 				//4="image_scale( x0+3, y0, x1, y0+3, graphics/flag_top_hover )"
@@ -540,12 +578,31 @@
 			inset="0 -3 8 0"
 			render_bg {
 				//0="gradient( x0, y0, x1, y1, inbox_active_hover1, inbox_active_hover2  )"
-				//1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification )"
+				1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification )"
 				//2="image( x0, y0, x0, y1, graphics/flag_left_hover )"
 				//3="image( x1, y0, x1, y1, graphics/flag_right_hover )"
 				//4="image_scale( x0+3, y0, x1, y0+3, graphics/flag_top_hover )"
 				//5="image_scale( x0+3, y1, x1, y1+3, graphics/flag_bottom_hover )"
 			}
+		}
+
+		Menu
+    {
+		bgcolor="dialogbg"
+		padding-right=4
+		inset="2 2 2 2"
+      
+				render_bg
+				{
+					//0="gradient( x0 + 1, y0 + 1, x1 - 1, y0+140, MenuBG1, MenuBG2  )"
+					//1="fill( x0 + 1 , y0 + 140, x1 - 1, y1 - 1, MenuBG2  )"
+		
+					// lines around
+				//2="fill( x0 + 1, y0, x1 - 1, y0 + 1, clientbg )"  // top
+				//3="fill( x0 + 1, y1 - 1, x1 - 1, y1, clientbg )"  // bottom
+				//4="fill( x0, y0 + 1, x0 + 1, y1 - 1, clientbg )"  // left
+				//5="fill( x1 - 1, y0 + 1, x1, y1 - 1, clientbg )"  // right
+				}
 		}
 
 		parental_lock_button
@@ -672,6 +729,25 @@
 			
 		}
 		
+		FullscreenButton [!$OSX]
+		{
+			padding-left=0
+			padding-top=0 
+			padding-right=0
+			padding-bottom=0
+		}
+
+		FullscreenButton [$OSX]
+		{
+			padding-left=0
+			padding-top=3
+			padding-right=0
+			padding-bottom=0
+		}
+
+
+
+
 		inboxmenuitem
 		{
 			textcolor=inbox_inactive_text
@@ -701,6 +777,8 @@
 		{
 			textcolor="TextDisabled"
 		}
+
+
 	}
 	
 	colors
@@ -735,6 +813,19 @@
 		
 		disabledborder "black"
 
+
+		support_flag_red "169 72 71 255"
+		
+		support_hover_red1 "193 94 93 255"
+		support_hover_red2 "156 64 63 255"
+		
+		inbox_active_text "text"
+		inbox_inactive_text "labeldisabled"
+
+		backdrop "20 20 20 255"
+		
+		disabledborder "63 63 63 255"
+
 	}
 	
 	layout
@@ -746,23 +837,26 @@
 		
 		place { control="UIStatusPanel" width=max height=40 align=bottom  margin-bottom=18 }
 		
-		place [!$OSX] { control="MenuBar" align=top margin-top=2 margin-left=2 }
-			
-		place [!$OSX] { control="account_balance, account_balance_seperator, account_URL, universe_label" align=right margin-top=9 margin-right=83 spacing=7 }	
-		place [$OSX]  { control="account_balance, account_balance_seperator, account_URL, universe_label" align=right margin-top=9 margin-right=15 spacing=7 }
+		place [!$OSX] { control="MenuBar" align=top margin-top=5 margin-left=2 }
 		
-		place { control="InboxButton" align=right end-right="account_balance" margin-top=1 margin-right=20 height=26 }
-		place { control="ParentalLockButton" align=right end-right="InboxButton" margin-top=1 margin-right=10 height=26 }
-		place { control="SupportAlert" align=right end-right="ParentalLockButton" margin-top=1 margin-right=10 height=26 }
 
-		place [!$OSX]  { control="frame_minimize,frame_maximize,frame_close" align=right margin-top=7 margin-right=6 spacing=-5 }
+			
+		place [!$OSX] { control="account_balance, account_URL, universe_label, fullscreen" align=right margin-top=12 margin-right=78 spacing=7 }	
+		place [$OSX]  { control="account_balance, account_URL, universe_label, fullscreen" align=right margin-top=12 margin-right=15 spacing=7 }
+	
+		place [!$OSX] { control="fullscreen" tooltiptext="#tooltip_view_fullscreen" align=right y=7 height=20 spacing=0 margin-right=78 margin-top=1 width=30 region="bigpicture"}
+		place [$OSX] { control="fullscreen" tooltiptext="#tooltip_view_fullscreen" align=right y=7 height=20 spacing=0 margin-right=8 margin-top=1 width=30 region="bigpicture"}
+	
+		place { control="InboxButton" align=right end-right="account_balance" margin-top=4 margin-right=16 height=26 }
+		place { control="ParentalLockButton" align=right end-right="InboxButton" margin-top=7 margin-right=10 height=23 }
+		place { control="SupportAlert" align=right end-right="ParentalLockButton" margin-top=4 margin-right=10 height=26 }
+
+		place [!$OSX]  { control="frame_minimize,frame_maximize,frame_close" align=right margin-top=10 margin-right=9 spacing=-5 }
+		place [$OSX] { control="frame_close,frame_minimize,frame_maximize" align=left margin-top=10 margin-left=4 spacing=-7 }
 
 		region { name=bottom align=bottom width=max height=75 }
 		
-		place [!$OSX] { control="ImageLogo" align=right x=650 y=0 width=340 height=133 margin-top=0 margin-right=0}
-		place [$OSX] { control="ImageLogo" align=right x=650 y=0 width=340 height=133 margin-top=0 margin-right=0}	
-		
-		place { control="add_game" x=14 y=16 region=bottom height=30}
+		place { control="add_game" x=14 y=16 region=bottom height=0}
 
 		place { control="FriendPanel" height=48 width=48 region=bottom align=right margin-right=2 margin-top=16 }
 		place { control="view_friends" height=62 y=12 region=bottom align=right dir=right margin-right=56 }

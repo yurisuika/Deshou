@@ -94,7 +94,12 @@
 		RepeatButtonStyle:hover	{	bgcolor=none render_bg={} image=graphics/music_repeat_hover	inset="0" padding="0" }
 		RepeatButtonStyle:selected	{	bgcolor=none render_bg={} image=graphics/music_repeat_enabled }
 		RepeatButtonStyle:selected:hover	{	bgcolor=none render_bg={} image=graphics/music_repeat_enabled_hover }
+		RepeatOnceButtonStyle	{	bgcolor=none render_bg={} image=graphics/music_repeat_default	inset="0" padding="0" }
+		RepeatOnceButtonStyle:hover	{	bgcolor=none render_bg={} image=graphics/music_repeat_hover	inset="0" padding="0" }
+		RepeatOnceButtonStyle:selected	{	bgcolor=none render_bg={} image=graphics/music_repeat1_enabled }
+		RepeatOnceButtonStyle:selected:hover	{	bgcolor=none render_bg={} image=graphics/music_repeat1_enabled_hover }
 		ShuffleButtonStyle	{	bgcolor=none render_bg={} image=graphics/music_shuffle_default	}
+		ShuffleButtonStyle:hover	{	bgcolor=none render_bg={} image=graphics/music_shuffle_hover	}
 		ShuffleButtonStyle:selected	{	bgcolor=none render_bg={} image=graphics/music_shuffle_enabled }
 		ShuffleButtonStyle:selected:hover	{	bgcolor=none render_bg={} image=graphics/music_shuffle_enabled_hover }
 		PreviousButtonStyle	{	bgcolor=none render_bg={} image=graphics/music_trackback_default	}
@@ -117,9 +122,9 @@
 		BrowseButtonStyle {	bgcolor=none render_bg={} image=graphics/music_browse_default	}
 		BrowseButtonStyle:hover {	bgcolor=none render_bg={} image=graphics/music_browse_hover }
 		
-		StatusStyle	{ render_bg={} font-family=basefont textcolor="LabelFocus" font-size=11	}
-		StatusStyleDim	{ render_bg={} font-family=basefont textcolor="LabelDisabled" font-size=11	}
-		InfoLabelStyle	{ render_bg={} font-family=basefont font-size=11 textcolor="LabelDisabled" }
+		StatusStyle	{ render_bg={} font-family=basefont textcolor="LabelFocus" font-size=14	}
+		StatusStyleDim	{ render_bg={} font-family=basefont textcolor="LabelDisabled" font-size=14	}
+		InfoLabelStyle	{ render_bg={} font-family=basefont font-size=14 textcolor="LabelDisabled" }
 		TrackListStyle { }
 		NoTracksLabelStyle	{	bgcolor=none render_bg={} image=graphics/music_background }
 		
