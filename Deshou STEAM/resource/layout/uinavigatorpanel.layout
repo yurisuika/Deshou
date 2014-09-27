@@ -135,7 +135,7 @@
 		}
 		"URLBar"
 		{
-			"ControlName"		"Text"
+			"ControlName"		"TextEntry"
 			style="TextEntryURL"
 			group="url"
 		}
@@ -171,7 +171,6 @@
 	
 	styles
 	{
-
 		grouper
 		{
 			bgcolor=none
@@ -642,7 +641,7 @@
 		
 		"CSteamRootDialog TextEntryURL:hover"
 		{
-			textcolor="text"
+			textcolor="texthover"
 		}
 		
 		CUINavButtonNew

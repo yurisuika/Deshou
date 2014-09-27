@@ -96,7 +96,7 @@
 			font-size=11
 			textcolor=Text
 			font-family=basefont
-			font-weight=normal
+			font-weight=normal 
 			bgcolor=BackgroundStart
 		}
 
@@ -108,19 +108,6 @@
 			padding-right=10
 			font-size=11
 			textcolor=Text
-			font-family=basefont
-			font-weight=normal
-			bgcolor=none
-		}
-		
-		TracksInfoStyle
-		{
-			padding-bottom=0
-			padding-top=0
-			padding-left=0
-			padding-right=10
-			font-size=11
-			textcolor=labeldisabled
 			font-family=basefont
 			font-weight=normal 
 			bgcolor=none
@@ -198,7 +185,6 @@
 			render_bg
 			{
 				// background fill
-
 				// 0="gradient( x0, y0, x1, y1+1, launch1, launch2 )"
 				}	
 			}
@@ -227,9 +213,7 @@
 			render_bg
 			{
 			// background fill
-
 				// 0="gradient( x0, y0, x1, y1+1, focus, launch2 )"
-
 			}			
 		}
 	}

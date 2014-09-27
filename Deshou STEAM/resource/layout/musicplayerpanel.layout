@@ -45,29 +45,23 @@
 			
 			render_bg
 			{
-				// top area and graphic
-				//0="gradient( x0, y0, x1, y0+275, ClientBG, DialogBG )"
-				//2="image( x0, y0, x1, y0+175, graphics/clienttexture2)"
-				// fill in the bottom area
-				//3="fill( x0, y0 + 275, x1, y1, DialogBG )"
+
+	
 			}
 		}		
 		
 		MusicListPanelInterior
 		{     
-			inset="0 -3 0 0"
+			inset="3 -1 0 0"
 			font-size=11
 			textcolor="text2"
 			bgcolor="none" 
-			    render
-			{				
+			render
+			{
 
-			}
-		render_bg 
-			{				
-				// background gradient        
-				//0="gradient( x0, y0 - 1, x1, y1-3, dialogbg, almostblack )"
-			}
+			}	
+			render_bg 
+			{}
     	} 
     
     ClientTitle [!$OSX]
@@ -151,7 +145,7 @@
 		place { control="PlayPauseButton" region=transport x=100 y=0 width=56 height=50 }
 		place { control="NextButton,VolumeButton,BrowseButton" region=transport x=164 y=16 spacing=8 margin=0 height=18 }
 
-		place { control="TrackList" x=10 y=94 width=max height=max margin-right=10 margin-bottom=40 }
+		place { control="TrackList" x=10 y=94 width=max height=max margin-right=10 margin-bottom=45 }
 		place { control="NoTracksLabel" x=10 y=94 margin-right=10 margin-bottom=33 align="top-center" }
 		place { control="InfoLabel" align=bottom x=10 y=94 width=max margin-right=10 margin-bottom=8 }
 	}

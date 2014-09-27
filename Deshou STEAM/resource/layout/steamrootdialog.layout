@@ -746,6 +746,8 @@
 		}
 
 
+
+
 		inboxmenuitem
 		{
 			textcolor=inbox_inactive_text
@@ -836,6 +838,7 @@
 		place { control="UIStatusPanel" width=max height=40 align=bottom  margin-bottom=18 }
 		
 		place [!$OSX] { control="MenuBar" align=top margin-top=5 margin-left=2 }
+		
 
 			
 		place [!$OSX] { control="account_balance, account_URL, universe_label, fullscreen" align=right margin-top=12 margin-right=78 spacing=7 }	
@@ -854,7 +857,6 @@
 		region { name=bottom align=bottom width=max height=75 }
 		
 		place { control="add_game" x=14 y=16 region=bottom height=0}
-
 
 		place { control="FriendPanel" height=48 width=48 region=bottom align=right margin-right=2 margin-top=16 }
 		place { control="view_friends" height=62 y=12 region=bottom align=right dir=right margin-right=56 }
