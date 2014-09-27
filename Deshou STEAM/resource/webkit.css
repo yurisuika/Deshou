@@ -5,10 +5,11 @@
 */	
 ::-webkit-scrollbar,
 ::-webkit-scrollbar-corner {
-	max-width: 19px;
-	max-height: 19px;
-	min-width: 19px;
-	min-height: 19px;
+	max-width: 9px;
+	max-height: 10px;
+	min-width: 9px;
+	min-height: 10px;
+
 	background: #333333;
 }
 
@@ -19,8 +20,8 @@
 	}
 
 ::-webkit-scrollbar-thumb {
-	background-color: #4D4D4D;
-	border: 6px solid #333333;
+	background-color: #4E4E4E;
+	border: 3px solid #333333;
 	background-clip: content-box;
 	
 }
@@ -37,7 +38,7 @@
 
 /*::-webkit-scrollbar-button:hover, */
 ::-webkit-scrollbar-thumb:hover {
-	background-color: #4D4D4D;
+	background-color: #4E4E4E;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -57,7 +58,7 @@
 ::-webkit-scrollbar-button:vertical:increment {
 	
 	height: 0px;
-	background-position: center 7px;
+	background-position: center 3px;
 	/*background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAFCAYAAACXU8ZrAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAENJREFUeNpiTE6I++/j68+AC2zZvJGBac78hYwgBi4FIHkmEAebQpgCMOf///9wDLJ6/dq1/0E0sjiKIphCdDGAAAMAtQVIOLvLsjoAAAAASUVORK5CYII=);
 
 	*/}

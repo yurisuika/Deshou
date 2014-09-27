@@ -126,6 +126,19 @@
 			bgcolor=none
 		}
 		
+		TracksInfoStyle
+		{
+			padding-bottom=0
+			padding-top=0
+			padding-left=0
+			padding-right=10
+			font-size=11
+			textcolor=labeldisabled
+			font-family=basefont
+			font-weight=normal 
+			bgcolor=none
+		}
+		
 		TrackStyle
 		{
 			padding-bottom=10
@@ -168,51 +181,55 @@
 		
 		ActionButtonStyle
 		{   
-			inset="23 1 0 0"
+			inset="-5 1 0 0"
 
 			font-family=basefont
 			font-size=11
 			font-weight=normal
-			textcolor="Text"
+			textcolor="white"
 			font-style=uppercase
 			bgcolor=none
+			padding-bottom=10
 
 			render
 			{
-				1="image( x0 + 6, y0 + 5, x1, y1, graphics/icon_play )"
+				// 1="image( x0 + 6, y0 + 5, x1, y1, graphics/icon_play )"
 			}
 			render_bg
 			{
 				// background fill
-				//0="gradient( x0, y0, x1, y1+1, launch1, launch2 )"
+
+				// 0="gradient( x0, y0, x1, y1+1, launch1, launch2 )"
 				}	
 			}
 			
 		ActionButtonStyle:hover
 		{
-			textcolor="Text"
+			textcolor="white"
 			render
 			{
-			//	0="image( x0 + 6, y0 + 5, x1, y1, graphics/icon_play )"
+				// 0="image( x0 + 6, y0 + 5, x1, y1, graphics/icon_play )"
 			}	
 			render_bg
 			{
 			// background fill
-			//	0="gradient( x0, y0, x1, y1+1, launch0, launch2  )"
+				// 0="gradient( x0, y0, x1, y1+1, launch0, launch2  )"
 			}			
 		}
 		
 		ActionButtonStyle:active
 		{
-			textcolor="Text"
+			textcolor="white"
 			render
 			{
-			//	0="image( x0 + 6, y0 + 5, x1, y1, graphics/icon_play )"
+				// 0="image( x0 + 6, y0 + 5, x1, y1, graphics/icon_play )"
 			}	
 			render_bg
 			{
 			// background fill
-				//0="gradient( x0, y0, x1, y1+1, focus, launch2 )"
+
+				// 0="gradient( x0, y0, x1, y1+1, focus, launch2 )"
+
 			}			
 		}
 	}
