@@ -2,12 +2,7 @@
 {
 	controls
 	{
-		"ImageLogo"
-		{
-		"ControlName" 	"Label"
-		style="ClientLogo"
-		zpos=-5
-		}
+
 		
 		"fullscreen"
 		{
@@ -785,8 +780,7 @@
 
 		region { name=bottom align=bottom width=max height=75 }
 		
-		place [!$OSX] { control="ImageLogo" align=right x=650 y=0 width=340 height=133 margin-top=0 margin-right=0}
-		place [$OSX] { control="ImageLogo" align=right x=650 y=0 width=340 height=133 margin-top=0 margin-right=0}	
+
 		
 		place { control="add_game" x=14 y=16 region=bottom height=30}
 

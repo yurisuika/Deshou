@@ -48,7 +48,7 @@ steam.styles
     almostBlack="black"
     white="baseLight"
     grey="baseDark"
-    none="0 0 0 0"
+    none="0 0 0 0" //Transparent
     yellow="baseLight"
     offwhite="baseHighlight"
     dullgreen="baseInGame"

@@ -116,7 +116,7 @@
 		DetailsBorderPanel
 		{
 			
-			bgcolor = none
+			bgcolor ="51 51 51 255"
 			render 
 			{
 
@@ -143,7 +143,7 @@
 	
 		
 	region	{ name="content" y=0 x=0 width=max height=max }
-	place	{ control=CMusicPage_Details_Content region=content x=0 y=0 width=max height=max }
+	place	{ control=CMusicPage_Details_Content region=content x=0 y=0 width=max height=max bgcolor="51 51 51 255"}
 	
 	}
 
