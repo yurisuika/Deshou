@@ -160,10 +160,10 @@
 		AccountBalanceSeparatorStyle
 		{
 					textcolor="textDisabled"
-					font-family=none
+					font-family=basefont
 					font-size=11
 					font-weight=normal
-					font-style=regular
+		      font-style=regular
 					inset="0 0 0 0"
 		}
 			
