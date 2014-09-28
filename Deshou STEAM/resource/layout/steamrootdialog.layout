@@ -159,7 +159,7 @@
 		
 		AccountBalanceSeparatorStyle
 		{
-					textcolor="textDisabled"
+					textcolor="none"
 					font-family=basefont
 					font-size=11
 					font-weight=normal
