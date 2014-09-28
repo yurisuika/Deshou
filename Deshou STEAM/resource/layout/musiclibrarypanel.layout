@@ -31,14 +31,14 @@
 	colors
 	{
 	
-		dialogbgtrans="black
+		dialogbgtrans="black"
 	}
 
 	styles
 	{
 		CMusicLibraryPanel	
 		{
-			bgcolor=none
+			bgcolor=black
 			
 			minimum-width = 296
 			minimum-height = 300
@@ -230,7 +230,6 @@
 			inset="0 2 0 0"
 			textcolor="texthover"
 			font-style="uppercase"
-
 		}	
 		
 		NavLabel2:selected
