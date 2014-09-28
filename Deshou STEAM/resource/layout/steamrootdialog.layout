@@ -4,12 +4,20 @@
 	{
 
 			
+
+
+
+
+
+
+
 		"fullscreen"
 		{
 			"ControlName"		"Button"
 			style="FullscreenButton"
 			command="fullscreen"
 		}
+
 		
 		"New"
 		{
@@ -86,6 +94,14 @@
 			style="AccountURLStyle"
 		}
 		
+		account_balance_seperator
+		{
+			"ControlName"	"Label"
+			"fieldName"		"account_balance_seperator"
+			"labelText"		"|"
+			style="AccountBalanceSeparatorStyle"
+
+		}
 		
 		account_balance
 		{
@@ -94,15 +110,10 @@
 			"labelText"		""
 			"URLText"		"steam://url/StoreAccount/"
 			style="AccountBalanceStyle"
+
 		}
 		
-		account_balance_seperator
-		{
-			"ControlName"	"Label"
-			"fieldName"		"account_balance_seperator"
-			"labelText"		"|"
-			style="AccountBalanceSeparatorStyle"
-		}
+		
 		
 		universe_label
 		{
@@ -159,7 +170,7 @@
 		
 		AccountBalanceSeparatorStyle
 		{
-					textcolor="textDisabled"
+					textcolor="none"
 					font-family=basefont
 					font-size=11
 					font-weight=normal
@@ -167,6 +178,7 @@
 					inset="0 0 0 0"
 		}
 			
+
 		
 		ClientLogo
 		{
@@ -748,6 +760,7 @@
 
 
 
+
 		inboxmenuitem
 		{
 			textcolor=inbox_inactive_text
@@ -840,23 +853,29 @@
 		place [!$OSX] { control="MenuBar" align=top margin-top=5 margin-left=2 }
 		
 
+		place [!$OSX] { control="MenuBar" align=top margin-top=2 margin-left=2 }
 			
 		place [!$OSX] { control="account_balance, account_URL, universe_label, fullscreen" align=right margin-top=12 margin-right=78 spacing=7 }	
 		place [$OSX]  { control="account_balance, account_URL, universe_label, fullscreen" align=right margin-top=12 margin-right=15 spacing=7 }
 	
+
 		place [!$OSX] { control="fullscreen" tooltiptext="#tooltip_view_fullscreen" align=right y=7 height=0 spacing=0 margin-right=0 margin-top=1 width=0 region="bigpicture"}
 		place [$OSX] { control="fullscreen" tooltiptext="#tooltip_view_fullscreen" align=right y=7 height=0 spacing=0 margin-right=0 margin-top=1 width=0 region="bigpicture"}
 	
+
 		place { control="InboxButton" align=right end-right="account_balance" margin-top=4 margin-right=16 height=26 }
 		place { control="ParentalLockButton" align=right end-right="InboxButton" margin-top=7 margin-right=10 height=23 }
 		place { control="SupportAlert" align=right end-right="ParentalLockButton" margin-top=4 margin-right=10 height=26 }
 
-		place [!$OSX]  { control="frame_minimize,frame_maximize,frame_close" align=right margin-top=10 margin-right=9 spacing=-5 }
+		place [!$OSX]  { control="frame_minimize,frame_maximize,frame_close" align=right margin-top=7 margin-right=9 spacing=-5 }
 		place [$OSX] { control="frame_close,frame_minimize,frame_maximize" align=left margin-top=10 margin-left=4 spacing=-7 }
 
 		region { name=bottom align=bottom width=max height=75 }
 		
-		place { control="add_game" x=14 y=16 region=bottom height=0}
+place [!$OSX] { control="ImageLogo" align=right x=650 y=0 width=340 height=133 margin-top=0 margin-right=0}
+		place [$OSX] { control="ImageLogo" align=right x=650 y=0 width=340 height=133 margin-top=0 margin-right=0}	
+		
+		place { control="add_game" x=14 y=16 region=bottom height=30}
 
 		place { control="FriendPanel" height=48 width=48 region=bottom align=right margin-right=2 margin-top=16 }
 		place { control="view_friends" height=62 y=12 region=bottom align=right dir=right margin-right=56 }

@@ -9,3 +9,5 @@ Based on the Deshou colourscheme.
 ## Deshou STEAM
 
 Uses HaxrCorp S8.
+
+Read the [Wiki](https://github.com/vinylchan/Deshou/wiki) for some additional configuration
