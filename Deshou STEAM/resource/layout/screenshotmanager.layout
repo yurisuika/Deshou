@@ -128,7 +128,7 @@
 			textcolor="Text"
 			font-size=11
 			inset=2
-			font-style="italic"
+			font-style="regular"
 		}
 
 
