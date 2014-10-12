@@ -31,14 +31,14 @@
 	colors
 	{
 	
-		dialogbgtrans="black
+		dialogbgtrans="black"
 	}
 
 	styles
 	{
 		CMusicLibraryPanel	
 		{
-			bgcolor=none
+			bgcolor=black
 			
 			minimum-width = 296
 			minimum-height = 300
