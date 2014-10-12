@@ -1,8 +1,16 @@
-/*body{
+@font-face {
+    font-family: HaxrCorp;
+    src: url('./fonts/haxrcorpttf.ttf');
+}
+body{
     background: #333333 !important;
 	background-image: none !important;
 	}	
-*/	
+
+* {
+	font-family: HaxrCorp;
+	}
+	
 ::-webkit-scrollbar,
 ::-webkit-scrollbar-corner {
 	max-width: 9px;
