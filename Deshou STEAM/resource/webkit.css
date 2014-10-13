@@ -1,10 +1,12 @@
 @font-face {
     font-family: HaxrCorp;
-    src: url('./fonts/haxrcorpttf.ttf');
+    src: url('http://5crat.ch/haxr/haxrcorpttf.ttf');
 }
 * {
-	font-family: HaxrCorp;
+	font-family: HaxrCorp !important;
 	}
+	
+	
 body{
     background: #1B1B1B !important;
 	background-image: none !important;
