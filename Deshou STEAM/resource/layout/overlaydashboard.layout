@@ -24,18 +24,7 @@
 			style=bottomfade
 			zpos=-1
 		}		
-		Clock
-		{
-			controlname="Label"
-			labeltext="10:43"
-			style=topbar
-		}
-		ClockSuffix
-		{
-			controlname="Label"
-			labeltext="am"
-			style=clocksuffix
-		}
+		
 		GameName
 		{
 			controlname="Label"
@@ -57,17 +46,14 @@
 		CloseButton	{ controlname="URLLabel" labeltext="#Overlay_Taskbar_Close" style="OverlayURLLabel"}
 		HotkeyLabel { controlname="Label" labeltext="%hotkey%" style="hotkey" }	
 		HotkeyExplain { controlname="Label" labeltext="#Overlay_Hotkey_Explain" margin-left=4 style="LabelOverlay"}
-		
-		SessionText { controlname=label style=TimeStrings labeltext="#Overlay_Playtime_Session" }
-		TwoWeeksText { controlname=label style=TimeStrings }
-		ForeverText { controlname=label style=TimeStrings }
 	}
 	
 	colors
 	{
 	
 	backgroundOverlayTop="black128"
-
+  	Highlight2="InGameColour" 
+  
 	}
 	
 	styles
@@ -81,8 +67,8 @@
 		topfade
 		{
 			render_bg
-			{
-				//0="gradient( x0, y0, x1, y1, backgroundOverlayTop, none )"
+			{//
+				0="gradient( x0, y0, x1, y1, backgroundOverlayTop, none )"
 			}
 		}
 		bottomfade
@@ -94,22 +80,18 @@
 		}	
 		overlaymain
 		{
-			bgcolor = "51 51 51 51"
+			bgcolor = "Black128"
 		}	
-		
-		clocksuffix
-		{
-			font-size=27
-			padding-top=10
-			//textcolor=red
-			font-weight=normal
-			font-style=uppercase;
-		}
+				
 		topbar
 		{
-			font-size=43
+			font-size=27
 			
 			textcolor=text
+		}
+		detailsboxtitle
+		{
+				textcolor=Highlight2
 		}
 				
 		OverlayURLLabel
@@ -128,15 +110,7 @@
 				{
 			font-size=11
 			textcolor=text2
-		}
-		
-		timeStrings
-		{
-			font-size="11"
-			textcolor="label"
-			font-family=basefont
-			font-weight=normal
-		}
+		}		
 	}
 	
 	layout
@@ -155,13 +129,9 @@
 		
 		place { control="TopFadePanel" align=top width=max height=600 }
 		place { control="BottomFadePanel" align=bottom width=max height=130 }
-				
-		place { control="Clock,ClockSuffix" region=topbar }
 		
 		place { control="CloseButton" region=mid align=top-center }
 		place { control="HotkeyLabel,HotkeyExplain" region=mid align=top-center y=14 spacing=5 }
-		
-		place { control="SessionText,TwoWeeksText,ForeverText" dir=down region=overlay y=35 }
 		
 		place { controls="gamename" region=topbar align=right width=400 }
 		
