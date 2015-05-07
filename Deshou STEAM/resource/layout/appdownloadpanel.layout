@@ -6,10 +6,12 @@
 		appdownloadpanel	{	tall="110"	style=panelStyle }
 
 		// image
-		gameimage		{ controlname="ImagePanel"	 style="gameImagePanel" }		// set the initial size on on the gameimage; it's loaded async, so it may not know the image size immediately
+		spacer			{ controlname="Panel" }
+		gameimage		{ controlname="ImagePanel" zpos="1" style="gameImagePanel" }		// set the initial size on on the gameimage; it's loaded async, so it may not know the image size immediately
+		workshopbanner		{ controlname="ImagePanel" zpos="2" image="resource/workshop_minibanner" }  
 		
 		// left-mid column
-		namelabel	{ controlname="Label"	labelText="%name%" style="ModuleHeading" }
+		namelabel	{ controlname="Label"	labelText="#steam_downloads_gamename" style="ModuleHeading" }
 		dashlabel	{ controlname="Label"	labelText=""	}
 		launchbutton		{ controlname="Button"	style="DetailsLaunchButton"	labelText="#Steam_LaunchGame" zpos="1" }
 		downloadprogressbar	{ controlname="ProgressBar" style="SlimProgressBar" barinset=0 continuous=1 group="ShowWhileDownloading" style="SlimProgressBar" }
@@ -27,14 +29,14 @@
 		
 
 		// right column
-		updatetypelabel	{ controlname="Label"	labelText="#steam_downloads_suspended" style=ModuleHeading2 }
+		updatetypelabel	{ controlname="Label"	labelText="#steam_downloads_suspended" style=ModuleHeading2 tooltiptext="" }
 		removefromqueuebutton	{ controlname="Button" style="SmRemoveButton" tooltiptext="#steam_downloads_remove" }
 		topofqueuebutton	{ controlname="Button" style="topOfQueueButton" tooltiptext="#steam_downloads_topofqueue" group="HideOnCompletion" }
 		newslink			{ controlname="URLlabel"	style="links"		labelText="#steam_downloads_updatenews" }
 
 	
 		
-	}
+	} 
 	
 	colors
 	{
@@ -46,7 +48,7 @@
 	{
 		panelStyle
 		{
-			bgcolor=clientbg
+			bgcolor=none
 			
 		}
 		
@@ -55,6 +57,7 @@
 			render_bg
 			{
 				//0="gradient( x0, y0, x1, y1, dark_blue_grad, light_blue_grad )"
+				2="image( x0, y0 - 55, x1, y1+8, graphics/clienttexture2b)"
 			}			
 		}
 
@@ -81,6 +84,11 @@
 			padding-top=0
 			padding-bottom=0
 		}
+
+		links:disabled
+		{
+			textcolor="TextDisabled"
+		}
 		
 		settingslink
 		{
@@ -102,7 +110,12 @@
 			padding-left=0
 			padding-top=0
 			padding-bottom=0
-		}		
+		}
+
+		settingslink:disabled
+		{
+			textcolor="TextDisabled"
+		}
 
 		rightcolumnlink:hover
 		{
@@ -127,7 +140,7 @@
 			font-size	"11"
 			textcolor	"text"
 			padding-top	"0"
-			font-weight	"700"
+			font-weight	"normal"
 		}	
 		
 		ModuleHeading2
@@ -137,7 +150,7 @@
 			font-size	"11"
 			textcolor	"label"
 			padding-top	"0"
-			font-weight	"400"
+			font-weight	"normal"
 		}								
 		
 		panelBgColorActive
@@ -163,24 +176,13 @@
 		gameImagePanelHighlight
 		{   
 			inset="0 0 0 0"
-			render_bg
+			bgcolor=none
+			render_bg	
 			{
-				// Insert glowy image here?
-				
-				// bottom
-				//0="gradient( x0+8, y1 - 8, x1 - 8, y1, light_blue_grad, none )"
-				// top
-				//1="gradient( x0 + 8, y0, x1 - 8, y0 + 8, none, light_blue_grad )"
-				// left
-				//2="gradient_horizontal( x0, y0 + 8, x0 + 8, y1 - 8, none, light_blue_grad )"
-				// right
-				//3="gradient_horizontal( x1 - 8, y0 + 8, x1, y1 - 8, light_blue_grad, none )"				
-			}
-			render
-			{
-			}
-		}		
-						
+				0="image( x0 - 8, y0 - 3, x1 + 8, y1 + 0, graphics/downloads_bg )"
+			}		
+			padding "4"
+		}					
 		DetailsLaunchButton
 		{   
 
@@ -188,7 +190,7 @@
 			font-family=basefont
 			font-size=11
 			font-weight=normal
-			textcolor="Text"
+			textcolor="white"
 			font-style="uppercase"
 			bgcolor=none
 
@@ -199,25 +201,9 @@
 			render_bg
 			{
 				// background fill
-				//0="gradient( x0 + 1, y0 + 1, x1 - 1, y1 - 1, buttonface2, propertysheetbg )"
+				//0="gradient( x0, y0-1, x1, y1, launch1, launch2 )"
 
-				// lines around
-		//1="fill( x0 + 2, y0, x1 - 2, y0 + 1, ButtonBorder )"  // top
-		//2="fill( x0 + 2, y1 - 1, x1 - 2, y1, ButtonBorder )"  // bottom
-		//3="fill( x0, y0 + 2, x0 + 1, y1 - 2, ButtonBorder )"  // left
-		//4="fill( x1 - 1, y0 + 2, x1, y1 - 2, ButtonBorder )"  // right
-				//5="fill( x0 + 1, y0 + 1, x0 + 2, y0 + 2, ButtonBorder )"
-		//6="fill( x1 - 2, y0 + 1, x1 - 1, y0 + 2, ButtonBorder )"
-		//7="fill( x0 + 1, y1 - 2, x0 + 2, y1 - 1, ButtonBorder )"
-		//8="fill( x1 - 2, y1 - 2, x1 - 1, y1 - 1, ButtonBorder )"
-			//9="fill( x0, y0 + 1, x0 + 1, y0 + 2, ButtonFace2 )"
-			//10="fill( x1 - 1, y0 + 1, x1, y0 + 2, ButtonFace2 )"
-			//11="fill( x0, y1 - 2, x0 + 1, y1 - 1, ButtonFace2 )"
-			//12="fill( x1 - 1, y1 - 2, x1, y1 - 1, ButtonFace2 )"
-			//13="fill( x0 + 1, y0, x0 + 2, y0 + 1, ButtonFace2 )"
-			//14="fill( x1 - 2, y0, x1 - 1, y0 + 1, ButtonFace2 )"
-			//15="fill( x0 + 1, y1 - 1, x0 + 2, y1, ButtonFace2 )"
-			//16="fill( x1 - 2, y1 - 1, x1 - 1, y1, ButtonFace2 )"
+
 		
 			}	
 		}
@@ -228,35 +214,20 @@
 			font-family=basefont
 			font-size=11
 			font-weight=normal
-			textcolor="TextHover"
+			textcolor="white"
 			font-style=uppercase
 			bgcolor=none   
 
 			render
 			{
-				0="image( x0 + 6, y0 + 4, x1, y1, graphics/icon_play_hover )"
+				0="image( x0 + 6, y0 + 4, x1, y1, graphics/icon_play )"
 			}
 			render_bg
 			{
 				// background fill
-				//0="gradient( x0 + 1, y0 + 1, x1 - 1, y1 - 1, buttonfaceactive, propertysheetbg )"
+				//0="gradient( x0, y0-1, x1, y1, launch0, launch2 )"
 
-		//1="fill( x0 + 2, y0, x1 - 2, y0 + 1, ButtonBorderFocus )"  // top
-		//2="fill( x0 + 2, y1 - 1, x1 - 2, y1, ButtonBorderFocus )"  // bottom
-		//3="fill( x0, y0 + 2, x0 + 1, y1 - 2, ButtonBorderFocus )"  // left
-		//4="fill( x1 - 1, y0 + 2, x1, y1 - 2, ButtonBorderFocus )"  // right
-		//5="fill( x0 + 1, y0 + 1, x0 + 2, y0 + 2, ButtonBorderFocus )"
-	   	//6="fill( x1 - 2, y0 + 1, x1 - 1, y0 + 2, ButtonBorderFocus )"
-	   	//7="fill( x0 + 1, y1 - 2, x0 + 2, y1 - 1, ButtonBorderFocus )"
-	   	//8="fill( x1 - 2, y1 - 2, x1 - 1, y1 - 1, ButtonBorderFocus )"
-	   		//9="fill( x0, y0 + 1, x0 + 1, y0 + 2, ButtonFace2 )"
-			//10="fill( x1 - 1, y0 + 1, x1, y0 + 2, ButtonFace2 )"
-			//11="fill( x0, y1 - 2, x0 + 1, y1 - 1, ButtonFace2 )"
-			//12="fill( x1 - 1, y1 - 2, x1, y1 - 1, ButtonFace2 )"
-			//13="fill( x0 + 1, y0, x0 + 2, y0 + 1, ButtonFace2 )"
-			//14="fill( x1 - 2, y0, x1 - 1, y0 + 1, ButtonFace2 )"
-			//15="fill( x0 + 1, y1 - 1, x0 + 2, y1, ButtonFace2 )"
-			//16="fill( x1 - 2, y1 - 1, x1 - 1, y1, ButtonFace2 )"
+
 			}	
 		}
 		
@@ -272,30 +243,13 @@
 
 			render
 			{
-				1="image( x0 + 6, y0 + 4, x1, y1, graphics/icon_play )"
+				1="image( x0 + 6, y0 + 5, x1, y1, graphics/icon_play )"
 			}
 			render_bg
 			{
 				// background fill
-				0="fill( x0 + 1, y0 + 1, x1 - 1, y1 - 1, buttonfacedisabled )"
+				//0="fill( x0, y0-1, x1, y1, buttonfacedisabled )"
 
-				// lines around
-		//1="fill( x0 + 2, y0, x1 - 2, y0 + 1, ButtonBorderDisabled )"  // top
-		//2="fill( x0 + 2, y1 - 1, x1 - 2, y1, ButtonBorderDisabled )"  // bottom
-		//3="fill( x0, y0 + 2, x0 + 1, y1 - 2, ButtonBorderDisabled )"  // left
-		//4="fill( x1 - 1, y0 + 2, x1, y1 - 2, ButtonBorderDisabled )"  // right
-		//5="fill( x0 + 1, y0 + 1, x0 + 2, y0 + 2, ButtonBorderDisabled )"
-		//6="fill( x1 - 2, y0 + 1, x1 - 1, y0 + 2, ButtonBorderDisabled )"
-		//7="fill( x0 + 1, y1 - 2, x0 + 2, y1 - 1, ButtonBorderDisabled )"
-		//8="fill( x1 - 2, y1 - 2, x1 - 1, y1 - 1, ButtonBorderDisabled )"
-			//11="fill( x0, y0 + 1, x0 + 1, y0 + 2, ButtonBorderDisabled2 )"
-			//12="fill( x1 - 1, y0 + 1, x1, y0 + 2, ButtonBorderDisabled2 )"
-			//13="fill( x0, y1 - 2, x0 + 1, y1 - 1, ButtonBorderDisabled2 )"
-			//14="fill( x1 - 1, y1 - 2, x1, y1 - 1, ButtonBorderDisabled2 )"
-			//15="fill( x0 + 1, y0, x0 + 2, y0 + 1, ButtonBorderDisabled2 )"
-			//16="fill( x1 - 2, y0, x1 - 1, y0 + 1, ButtonBorderDisabled2 )"
-			//17="fill( x0 + 1, y1 - 1, x0 + 2, y1, ButtonBorderDisabled2 )"
-			//18="fill( x1 - 2, y1 - 1, x1 - 1, y1, ButtonBorderDisabled2 )"
 			}
 		}
 
@@ -363,24 +317,26 @@
 			{
 			}    
 		}
-	}
+	} 
 
 
 	layout
 	{
-		region	{ name="bottom" width="1262" y=75 height=60 width=400 }
-		
+		region { name="bottom" y=75 height=60 width=400 }
+		  
 		region { name="column1" x=0 width=200 }
 		region { name="column2" x=210 width=max }
 		region { name="column3" x=500 width=max }
 		region { name="column4" x=700 width=max overflow=allow-horizontal }
 		
 		// left column
-		place { control="gameimage" region="column1" margin-left=0 margin-top=16 width=200 height=85 }
+		place { control="spacer" }
+		place { control="gameimage" start=spacer dir=down margin-left=8 width=192 height=85 }
+		place { control="workshopbanner" margin-left=8 margin-top=82 width=192 height=26 } 
 		
 		// left-mid column
 		place { control="namelabel" region="column2" margin-top=16 margin-left=0 }
-		place { control="launchbutton" region=column2 start=namelabel dir=down margin-top=10 width=150 }
+		place { control="launchbutton" region=column2 start=namelabel dir=down margin-top=10 }
 		place { control="downloadprogressbar" region=column2 start=launchbutton margin-top=5 dir=down spacing=10 height=3 width=150 }
 		place { control="settingslink" region=column2 start=downloadprogressbar dir=down margin-top=5 margin-left=0 }
 
@@ -391,9 +347,9 @@
 		place { control="timeremaininglabel,timeremainingfield" region="column3" x=0 align=top margin-top=83 spacing=6 }
 				
 		// right column
-		place { control="updatetypelabel" region="column4" dir=down spacing=10 margin-top=22 align=right	region=top margin-right=16 }
-		place { control="topofqueuebutton,removefromqueuebutton" region="column4" height=22 width=26 dir=right spacing=10 margin-top=50 align=right	region=top margin-right=16 }
-		place { control="newslink" region="column4" dir=down spacing=10 margin-top=80 align=right	region=top margin-right=16 }
+		place { control="updatetypelabel" region="column4" spacing=10 margin-top=22 align=right margin-right=16 }
+		place { control="topofqueuebutton,removefromqueuebutton" region="column4" height=22 width=26 dir=right spacing=10 margin-top=50 align=right margin-right=16 }
+		place { control="newslink" region="column4" spacing=10 margin-top=80 align=right	margin-right=16 }
 
 		// put the buttons along the bottom
 		

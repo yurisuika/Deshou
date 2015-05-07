@@ -178,7 +178,7 @@
 			{
 				// background fill
 				// 0="fill( x0 + 2, y0 + 1, x0 + 273, y1 - 1, clientgrouper )"
-	//      1="fill( x0 + 279, y0 + 1, x1 - 10, y1 - 1, clientgrouper )"
+	  //    1="fill( x0 + 279, y0 + 1, x1 - 10, y1 - 1, clientgrouper )"
 
 
 			}
@@ -826,12 +826,12 @@
 
 		place { control="subnavgroup_library" align=top-center y=50 height=28 width=max margin-right=-2 margin-left=8 }
 		
-		place { control="URLStatusImage,EVCert,URLBar" align=left y=54 height=20 width=max spacing=5 margin-left=7 }
+		place { control="refresh,stop,URLStatusImage,EVCert,URLBar" align=left y=54 height=20 width=max spacing=1 margin-left=9 }
  	
 		place { control="library_search"  width=112 }	
 
-		place [!$OSX] { control="label_search_icon,library_search" align=left y=56 height=17 spacing=1 x=13 }
-		place  [$OSX] { control="label_search_icon,library_search" align=left y=56 height=17 spacing=1 x=12 }
+		place [!$OSX] { control="label_search_icon,library_search" align=left y=56 height=17 spacing=1 x=12 }
+		place  [$OSX] { control="label_search_icon,library_search" align=left y=56 height=17 spacing=1 x=11 }
 		
 		region { name="dropdown" width=200 x=82 y=55 height=20 }
 		
@@ -857,7 +857,10 @@
 		place { control=GamesPage_List		width=max height=max margin-top=0 margin-left=0 margin-right=9 margin-bottom=21 start=emailreminderbar dir=down }
 		place { control=GamesPage_Details 	width=max height=max margin-top=0 margin-left=0 margin-right=9 margin-bottom=21 start=emailreminderbar dir=down }
 		place { control=GamesPage_Grid 		width=max height=max margin-top=0 margin-left=0 margin-right=9 margin-bottom=20 start=emailreminderbar dir=down }
-		place { control=WebPanel 		width=max height=max margin-top=0 margin-left=0 margin-right=9 margin-bottom=21 start=emailreminderbar dir=down }
+		place { control=WebPanel 			width=max height=max margin-top=0 margin-left=0 margin-right=9 margin-bottom=21 start=emailreminderbar dir=down }
+		place { control=BroadcastPage			width=max height=max margin-top=0 margin-left=0 margin-right=9 margin-bottom=21 start=emailreminderbar dir=down }
+		place { control=BroadcastPageMin		width=300 height=168 margin-top=0 margin-left=0 margin-right=30 margin-bottom=26 dir=down align=bottom-right }
+		place { control=BroadcastPageMinHoriz	width=300 height=168 margin-top=0 margin-left=0 margin-right=30 margin-bottom=40 dir=down align=bottom-right }
 		place { control=ConsolePage 		width=max height=max margin-top=0 margin-left=0 margin-right=9 margin-bottom=21 start=emailreminderbar dir=down }
 
 		place { control=MediaPage 		width=max height=max margin-top=0 margin-left=0 margin-right=8 margin-bottom=20 start=emailreminderbar dir=down }
