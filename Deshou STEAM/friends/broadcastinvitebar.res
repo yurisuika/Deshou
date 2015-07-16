@@ -2,7 +2,7 @@
 {
 	colors
 	{
-		invitebg="black"
+		invitebg="baseInGame"
 	}
 
 	controls
