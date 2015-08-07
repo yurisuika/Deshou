@@ -9,6 +9,23 @@
 			"ControlName"		"Button"
 			style="FullscreenButton"
 			command="fullscreen"
+			tooltiptext="#tooltip_view_fullscreen" 
+		}
+		
+		"startvr"
+		{
+			"ControlName"		"Button"
+			style="VRButton"
+      			command="url steam://run/250820"
+     			tooltiptext="#tooltip_view_vr_start" 
+		}
+    
+		"exitvr"
+		{
+			"ControlName"		"Button"
+			style="VRButtonExit"
+			command="exitvr"
+			tooltiptext="#tooltip_view_vr_exit" 
 		}
 		
 		"New"
@@ -92,7 +109,7 @@
 			"ControlName"	"URLLabel"
 			"fieldName"		"account_balance"
 			"labelText"		""
-			"URLText"		"steam://url/StoreAccount/"
+			"URLText"		"steam://url/StoreWallet/"
 			style="AccountBalanceStyle"
 		}
 		
@@ -129,11 +146,11 @@
 	}
 	
 	styles
-	{    	
-
+	{    		
+			
 		AccountBalanceStyle
 		{
-		      textcolor="textDisabled"
+		      textcolor="labeldisabled"
 		      bgcolor="none"
 		      font-family=basefont
 		      font-size=11
@@ -143,7 +160,7 @@
 
 		AccountBalanceStyle [$OSX]
 		{
-		      textcolor="textDisabled"
+		      textcolor="labeldisabled"
 		      bgcolor="none"
 		      font-family=basefont
 		      font-size=11
@@ -159,22 +176,14 @@
 		
 		AccountBalanceSeparatorStyle
 		{
-					textcolor="none"
+					textcolor="ScrollGlyphDisabled"
 					font-family=basefont
 					font-size=11
 					font-weight=normal
 		      font-style=regular
 					inset="0 0 0 0"
 		}
-			
 		
-		ClientLogo
-		{
-			bgcolor=none
-			render_bg={}
-			image="graphics/piston"
-			inset="0 -20 0 0"
-		}
 		
 		new_label	
 		{			
@@ -320,7 +329,7 @@
 			font-style=uppercase
 			render_bg
 			{
-				//0="image( x0 + 2, y0 + 7, x1, y1, graphics/icon_collapse )"
+				0="image( x0 + 2, y0 + 7, x1, y1, graphics/icon_collapse )"
 			}
 		}
 		
@@ -329,7 +338,7 @@
 			textcolor="white"
 			render_bg
 			{
-				//0="image( x0 + 2, y0 + 7, x1, y1, graphics/icon_collapse_over )"
+				0="image( x0 + 2, y0 + 7, x1, y1, graphics/icon_collapse_over )"
 			}
 		}	
 		
@@ -342,7 +351,8 @@
 			render_bg
 			{
 				// top area and graphic
-				//0="gradient( x0, y0, x1, y0+175, ClientBG, DialogBG )"
+
+				//0="gradient( x0, y0, x1, y0+175, ClientBGTop, DialogBG )"
 				//2="image( x0, y0, x1, y0+175, graphics/clienttexture2)"
 
 				//3="fill( x0, y0+175, x0+20, y1-76, DialogBG )"			
@@ -354,30 +364,7 @@
 		}		
 
 	
-		ClientTitle [!$OSX]
-		{
-			textcolor=none		
-		}
 
-		ClientTitle [$OSX]
-		{
-			font-family=basefont
-			font-size=11
-      		font-weight=normal
-      		textcolor="textdisabled"
-      		bgcolor="none"
-      		inset="0 6 0 0"
-		}
-
-		ClientTitle:FrameFocus [$OSX]
-		{
-			font-family=basefont
-   			font-size=11
-   			font-weight=normal
-   			textcolor="texthover"
-   			bgcolor=black
-   			inset="0 6 0 0"
-		}
 
 		FrameTitle
 		{
@@ -385,7 +372,7 @@
 			font-size=11
 			font-weight=normal
 			textcolor="Label"
-			bgcolor=black
+			bgcolor="none"
 			render_bg
 			{
 				//1="gradient( x0, y0 - 4, x1, y1 + 18, TitleBar, none )"
@@ -399,7 +386,7 @@
 			font-size=11
 			font-weight=normal
 			textcolor="Label"
-			bgcolor=black
+			bgcolor="none"
 			textcolor="Text"
 		
 			render_bg
@@ -409,6 +396,31 @@
 			}
 		}
 		
+		ClientTitle [!$OSX]
+		{
+			textcolor=none		
+		}
+
+		ClientTitle [$OSX]
+		{
+			font-family=basefont
+			font-size=11
+      		font-weight=normal
+      		textcolor="textdisabled"
+      		bgcolor="none"
+      		inset="0 12 0 0"
+		}
+
+		ClientTitle:FrameFocus [$OSX]
+		{
+			font-family=basefont
+   			font-size=11
+   			font-weight=normal
+   			textcolor="texthover"
+   			bgcolor="none"
+   			inset="0 12 0 0"
+		}
+
 		view_friends [!$OSX]
 		{
 			textcolor="LabelFocus"
@@ -441,6 +453,11 @@
 			 textcolor="white"
 		}
 
+		view_friends:disabled
+		{
+			textcolor="TextDisabled"
+		}
+
 		online_friends [!$OSX]
 		{
 			textcolor="label2"
@@ -458,12 +475,17 @@
 			font-size=11
 			font-style=regular
 		}
-		
+
+		online_friends:disabled
+		{
+			textcolor="TextDisabled"
+		}
+
 		support_alert
 		{
 			font-family=basefont
-			font-size=11
-			font-weight=normal
+			font-size=14
+			font-weight=1000
 			font-style=none
 			textcolor=white
 			padding-left=50
@@ -472,11 +494,8 @@
 			inset="-8 -3 8 0"
 			render {}
 			render_bg {
-				//0="fill( x0, y0, x1, y1+1, support_flag_red )"
-				//1="image( x0, y0, x0, y1, graphics/support_flag_left )"
-				//2="image( x1, y0, x1, y1, graphics/support_flag_right )"
-				//3="image_scale( x0+3, y0, x1, y0+3, graphics/support_flag_top )"
-				//4="image_scale( x0+3, y1, x1, y1+3, graphics/support_flag_bottom )"
+				//0="fill( x0, y0 + 3, x1-1, y1, parental_lock_inactive1 )"
+
 			}
 		}
 		
@@ -493,99 +512,154 @@
 			inset="-8 -3 8 0"
 			render {}
 			render_bg {
-				//0="gradient( x0, y0, x1, y1+1, support_hover_red1, support_hover_red2 )"
-				//1="image( x0, y0, x0, y1, graphics/support_flag_left_hover )"
-				//2="image( x1, y0, x1, y1, graphics/support_flag_right_hover )"
-				//3="image_scale( x0+3, y0, x1, y0+3, graphics/support_flag_top_hover )"
-				//4="image_scale( x0+3, y1, x1, y1+3, graphics/support_flag_bottom_hover )"
+				//0="fill( x0, y0 + 3, x1-1, y1, parental_lock_inactive3 )"
 			}
 		}
-		
-		inbox_button
+
+
+
+		inbox_button [!$OSX]
 		{
 			font-family=basefont
 			font-size=11
 			font-weight=normal
 			font-style=none
 			textcolor=white
-			padding-left=2
-			padding-right=10
+			padding-left=0
+			padding-right=0
 			padding-top=6
-			
-			inset="-8 -3 8 0"
+			inset="0 -3 8 0"
 			render {}
-			render_bg {
-				//0="fill( x0, y0, x1, y1+1, inbox_inactive )"
-				//1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification_inactive )"
-				//2="image( x0, y0, x0, y1, graphics/flag_inactive_left )"
-				//3="image( x1, y0, x1, y1, graphics/flag_inactive_right )"
-				//4="image_scale( x0+3, y0, x1, y0+3, graphics/flag_inactive_top )"
-				//5="image_scale( x0+3, y1, x1, y1+3, graphics/flag_inactive_bottom )"
-			}
+			render_bg
+			{
+				13="image( x1-22, y0+6, x1 -2, y1, graphics/inbox_notification_inactive )"
+			}	
+		}
+		
+		inbox_button [$OSX]
+		{
+			font-family=basefont
+			font-size=11
+			font-weight=normal
+			font-style=none
+			textcolor=white
+			padding-left=0
+			padding-right=0
+			padding-top=6
+
+			inset="0 -2 8 0"
+			render {}
+			render_bg
+			{
+				13="image( x1-22, y0+6, x1 -2, y1, graphics/inbox_notification_inactive )"
+			}	
 		}
 
 		inbox_button:hover
 		{
-			render_bg {
-				//0="gradient( x0, y0, x1, y1+1, inbox_inactive_hover1, inbox_inactive_hover2  )"
-				//1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification_inactive )"
-				//2="image( x0, y0, x0, y1, graphics/flag_inactive_left_hover )"
-				//3="image( x1, y0, x1, y1, graphics/flag_inactive_right_hover )"
-				//4="image_scale( x0+3, y0, x1, y0+3, graphics/flag_inactive_top_hover )"
-				//5="image_scale( x0+3, y1, x1, y1+3, graphics/flag_inactive_bottom_hover )"
-			}
+
+			render {}
+			render_bg
+			{
+
+				1="image( x1-22, y0+6, x1 -2, y1, graphics/inbox_notification_inactive )"
+			}	
 		}
 
 		inbox_button:selected
 		{
-			render_bg {
-				//0="gradient( x0, y0, x1, y1, inbox_inactive_hover1, inbox_inactive_hover2  )"
-				1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification_inactive )"
-				//2="image( x0, y0, x0, y1, graphics/flag_inactive_left_hover )"
-				//3="image( x1, y0, x1, y1, graphics/flag_inactive_right_hover )"
-				//4="image_scale( x0+3, y0, x1, y0+3, graphics/flag_inactive_top_hover )"
-				//5="image_scale( x0+3, y1, x1, y1+3, graphics/flag_inactive_bottom_hover )"
-			}
+
+			render {}
+			render_bg
+			{
+				// background fill
+				
+				//0="gradient(  x0 -3, y0 + 3, x1+1, y1, almostblack, none )"
+				1="image( x1-22, y0+6, x1 -2, y1, graphics/inbox_notification_inactive )"
+			}	
 		}
+
+		inbox_button:disabled
+		{
+		textcolor=labeldisabled
+			padding-left=0
+			padding-right=0
+			padding-top=6
+			inset="0 -3 8 0" [!$OSX]
+			inset="0 -2 8 0" [$OSX]	
+			render {}
+					render_bg
+			{
+				// background fill
+				1="image( x1-22, y0+5, x1 -2, y1, graphics/inbox_notification_inactive_disabled )"
+			}	
+		}	
 
 		inbox_button_active
 		{
-			inset="0 -3 8 0"
-			render_bg {
-				//0="fill( x0, y0, x1, y1, inbox_active )"
-				//1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification )"
-				//2="image( x0, y0, x0, y1, graphics/flag_left )"
-				//3="image( x1, y0, x1, y1, graphics/flag_right )"
-				//4="image_scale( x0+3, y0, x1, y0+3, graphics/flag_top )"
-				//5="image_scale( x0+3, y1, x1, y1+3, graphics/flag_bottom )"
-			}
+			padding-left=3
+			padding-right=10
+			padding-top=6
+			inset="0 -3 8 0" [!$OSX]
+			inset="0 -2 8 0" [$OSX]		
+			render {}
+			render_bg
+			{
+				// background fill
+				
+				//0="fill(  x0 + 1, y0 + 3, x1+1, y1, green6 )"			
+				1="image( x1-22, y0+6, x1 -2, y1, graphics/inbox_notification )"
+			}	
 		}
-
+		
 		inbox_button_active:hover
 		{
-			inset="0 -3 8 0"
-			render_bg {
-				//0="gradient( x0, y0, x1, y1, inbox_active_hover1, inbox_active_hover2  )"
-				//1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification )"
-				//2="image( x0, y0, x0, y1, graphics/flag_left_hover )"
-				//3="image( x1, y0, x1, y1, graphics/flag_right_hover )"
-				//4="image_scale( x0+3, y0, x1, y0+3, graphics/flag_top_hover )"
-				//5="image_scale( x0+3, y1, x1, y1+3, graphics/flag_bottom_hover )"
-			}
+			padding-left=3
+			padding-right=10
+			padding-top=6
+			inset="0 -3 8 0" [!$OSX]
+			inset="0 -2 8 0" [$OSX]	
+			render {}
+						render_bg
+			{
+				// background fill
+				
+				//0="fill(  x0 + 1, y0 + 3, x1+1, y1, green5 )"			
+				1="image( x1-22, y0+6, x1 -2, y1, graphics/inbox_notification )"
+			}	
 		}
 		inbox_button_active:selected
 		{
-			inset="0 -3 8 0"
-			render_bg {
-				//0="gradient( x0, y0, x1, y1, inbox_active_hover1, inbox_active_hover2  )"
-				//1="image( x1-20, y0+6, x1, y1, graphics/inbox_notification )"
-				//2="image( x0, y0, x0, y1, graphics/flag_left_hover )"
-				//3="image( x1, y0, x1, y1, graphics/flag_right_hover )"
-				//4="image_scale( x0+3, y0, x1, y0+3, graphics/flag_top_hover )"
-				//5="image_scale( x0+3, y1, x1, y1+3, graphics/flag_bottom_hover )"
-			}
+			padding-left=3
+			padding-right=10
+			padding-top=6
+			inset="0 -3 8 0" [!$OSX]
+			inset="0 -2 8 0" [$OSX]	
+			render {}
+						render_bg
+			{
+				// background fill
+				
+				//0="gradient(  x0 + 1, y0 + 3, x1+1, y1, green8, green7 )"		
+				1="image( x1-22, y0+6, x1 -2, y1, graphics/inbox_notification )"
+			}	
 		}
 
+		inbox_button_active:disabled
+		{
+			padding-left=3
+			padding-right=10
+			padding-top=6
+			inset="0 -3 8 0" [!$OSX]
+			inset="0 -2 8 0" [$OSX]	
+			render {}
+						render_bg
+			{
+				// background fill
+				1="image( x1-22, y0+6, x1 -2, y1, graphics/inbox_notification_disabled )"
+			}	
+		}	
+		
 		Menu
     {
 		bgcolor="dialogbg"
@@ -604,34 +678,17 @@
 				//5="fill( x1 - 1, y0 + 1, x1, y1 - 1, clientbg )"  // right
 				}
 		}
-
 		parental_lock_button
 		{
 			padding-left=3
 			padding-right=7
-			image="resource/unlocked_acct"
+			padding-top=-1
+			image="resource/notfamilyview"
 			render {}
 			render_bg
 			{
 				// background fill
-				//0="gradient( x0 + 1, y0 + 1, x1 - 1, y1 + 2, parental_lock_inactive1, parental_lock_active2 )"
-
-				//1="fill( x0 + 1, y0, x1 - 1, y0 + 1, parental_lock_inactive1 )"  // top
-				//2="fill( x0 + 2, y1 + 2, x1 - 2, y1 + 3, parental_lock_inactive1 )"  // bottom
-				//3="fill( x0, y0, x0 + 1, y1 + 1, parental_lock_inactive1 )"  // left
-				//4="fill( x1 - 1, y0, x1, y1 + 1, parental_lock_inactive1 )"  // right		
-
-				//5="fill( x0, y1 + 1, x0 + 1, y1 + 2, parental_lock_inactive5 )"
-				//6="fill( x1 - 1, y1 + 1, x1, y1 + 2, parental_lock_inactive5 )"
-
-				//7="fill( x0 + 1, y1 + 1, x0 + 2, y1 + 3, parental_lock_inactive5 )"
-				//8="fill( x1 - 2, y1 + 1, x1 - 1, y1 + 2, parental_lock_inactive4 )"
-				
-				//9="fill( x0, y1 + 2, x0 + 1, y1 + 3, backdrop )"
-				//10="fill( x1 - 1, y1 + 2, x1, y1 + 3, backdrop )"
-				
-				//11="fill( x1 - 2, y1 + 2, x1 - 1, y1 + 3, parental_lock_inactive5 )"
-				//12="fill( x0 + 1, y1 + 1, x0 + 2, y1 + 2, parental_lock_inactive4 )"
+				//0="fill( x0 + 1, y0, x1 - 1, y1, parental_lock_inactive1 )"
 			}	
 		}
 
@@ -639,29 +696,13 @@
 		{
 			padding-left=3
 			padding-right=7
-			image="resource/unlocked_acct"
+		  padding-top=-1
+			image="resource/notfamilyview"
 			render {}
 			render_bg
 			{
 				// background fill
-				//0="gradient( x0 + 1, y0 + 1, x1 - 1, y1 + 2, parental_lock_inactive1, parental_lock_inactive2 )"
-
-				//1="fill( x0 + 1, y0, x1 - 1, y0 + 1, parental_lock_inactive1 )"  // top
-				//2="fill( x0 + 2, y1 + 2, x1 - 2, y1 + 3, parental_lock_inactive1 )"  // bottom
-				//3="fill( x0, y0, x0 + 1, y1 + 1, parental_lock_inactive1 )"  // left
-				//4="fill( x1 - 1, y0, x1, y1 + 1, parental_lock_inactive1 )"  // right		
-
-				//5="fill( x0, y1 + 1, x0 + 1, y1 + 2, parental_lock_inactive5 )"
-				//6="fill( x1 - 1, y1 + 1, x1, y1 + 2, parental_lock_inactive5 )"
-
-				//7="fill( x0 + 1, y1 + 1, x0 + 2, y1 + 3, parental_lock_inactive5 )"
-				//8="fill( x1 - 2, y1 + 1, x1 - 1, y1 + 2, parental_lock_inactive4 )"
-				
-				//9="fill( x0, y1 + 2, x0 + 1, y1 + 3, backdrop )"
-				//10="fill( x1 - 1, y1 + 2, x1, y1 + 3, backdrop )"
-				
-				//11="fill( x1 - 2, y1 + 2, x1 - 1, y1 + 3, parental_lock_inactive5 )"
-				//12="fill( x0 + 1, y1 + 1, x0 + 2, y1 + 2, parental_lock_inactive4 )"
+				//0="fill( x0 + 1, y0, x1 - 1, y1, parental_lock_inactive3 )"				
 			}	
 			
 		}
@@ -670,29 +711,13 @@
 		{
 			padding-left=3
 			padding-right=7
-			image="resource/locked_acct"
+			padding-top=-1
+			image="resource/familyview"
 			render {}
 			render_bg
 			{
 				// background fill
-				//0="gradient( x0 + 1, y0 + 1, x1 - 1, y1 + 2, parental_lock_active1, parental_lock_active2 )"
-
-				//1="fill( x0 + 1, y0, x1 - 1, y0 + 1, parental_lock_active1 )"  // top
-				//2="fill( x0 + 2, y1 + 2, x1 - 2, y1 + 3, parental_lock_active1 )"  // bottom
-				//3="fill( x0, y0, x0 + 1, y1 + 1, parental_lock_active1 )"  // left
-				//4="fill( x1 - 1, y0, x1, y1 + 1, parental_lock_active1 )"  // right		
-
-				//5="fill( x0, y1 + 1, x0 + 1, y1 + 2, parental_lock_active5 )"
-				//6="fill( x1 - 1, y1 + 1, x1, y1 + 2, parental_lock_active5 )"
-
-				//7="fill( x0 + 1, y1 + 1, x0 + 2, y1 + 3, parental_lock_active4 )"
-				//8="fill( x1 - 2, y1 + 1, x1 - 1, y1 + 2, parental_lock_active4 )"
-				
-				//9="fill( x0, y1 + 2, x0 + 1, y1 + 3, backdrop )"
-				//10="fill( x1 - 1, y1 + 2, x1, y1 + 3, backdrop )"
-				
-				//11="fill( x1 - 2, y1 + 2, x1 - 1, y1 + 3, parental_lock_active5 )"
-				//12="fill( x0 + 1, y1 + 2, x0 + 2, y1 + 3, parental_lock_active5 )"
+				//0="fill( x0 + 1, y0, x1 - 1, y1, green6 )"
 			}	
 			
 		}
@@ -702,33 +727,17 @@
 		{
 			padding-left=3
 			padding-right=7
-			image="resource/locked_acct"
+			padding-top=-1
+			image="resource/familyview"
 			render {}
 			render_bg
 			{
 				// background fill
-				//0="gradient( x0 + 1, y0 + 1, x1 - 1, y1 + 2, parental_lock_active1, inbox_active2 )"
-
-				//1="fill( x0 + 1, y0, x1 - 1, y0 + 1, parental_lock_active1 )"  // top
-				//2="fill( x0 + 2, y1 + 2, x1 - 2, y1 + 3, parental_lock_active1 )"  // bottom
-				//3="fill( x0, y0, x0 + 1, y1 + 1, parental_lock_active1 )"  // left
-				//4="fill( x1 - 1, y0, x1, y1 + 1, parental_lock_active1 )"  // right		
-
-				//5="fill( x0, y1 + 1, x0 + 1, y1 + 2, parental_lock_active5 )"
-				//6="fill( x1 - 1, y1 + 1, x1, y1 + 2, parental_lock_active5 )"
-
-				//7="fill( x0 + 1, y1 + 1, x0 + 2, y1 + 3, parental_lock_active4 )"
-				//8="fill( x1 - 2, y1 + 1, x1 - 1, y1 + 2, parental_lock_active4 )"
-				
-				//9="fill( x0, y1 + 2, x0 + 1, y1 + 3, backdrop )"
-				//10="fill( x1 - 1, y1 + 2, x1, y1 + 3, backdrop )"
-				
-				//11="fill( x1 - 2, y1 + 2, x1 - 1, y1 + 3, parental_lock_active5 )"
-				//12="fill( x0 + 1, y1 + 2, x0 + 2, y1 + 3, parental_lock_active5 )"
+				//0="fill( x0 + 1, y0, x1 - 1, y1, green5 )"
 			}	
 			
 		}
-		
+
 		FullscreenButton [!$OSX]
 		{
 			padding-left=0
@@ -744,10 +753,39 @@
 			padding-right=0
 			padding-bottom=0
 		}
-
-
-
-
+		
+		VRButton [!$OSX]
+		{
+			padding-left=0
+			padding-top=6 
+			padding-right=0
+			padding-bottom=0
+		}
+    
+		VRButton [$OSX]
+		{
+			padding-left=0
+			padding-top=3 
+			padding-right=0
+			padding-bottom=0
+		}
+		
+		VRButtonExit [!$OSX]
+		{
+			padding-left=0
+			padding-top=6 
+			padding-right=0
+			padding-bottom=0
+		}
+    
+		VRButtonExit [$OSX]
+		{
+			padding-left=0
+			padding-top=3 
+			padding-right=0
+			padding-bottom=0
+		}
+    
 		inboxmenuitem
 		{
 			textcolor=inbox_inactive_text
@@ -755,13 +793,18 @@
 		
 		inboxmenuitem_active
 		{
-			textcolor=inbox_active_text
+			textcolor=label
 		}
-		
+	
+		inboxmenuitem_active:hover
+		{
+			textcolor=white
+		}
 		AccountURLStyle
 		{
-		  textcolor=textdisabled
+		  textcolor=labeldisabled
 		  padding-top=-4
+		  padding-right=-14
 		}
 		
 		AccountURLStyle:hover
@@ -771,61 +814,201 @@
 		
 		AccountURLStyle:selected
 		{
-			textcolor=textdisabled
+			textcolor=white
 		}
+
 		AccountURLStyle:disabled
 		{
 			textcolor="TextDisabled"
 		}
+		
+		
+		//unique styles for the client main window
+		FrameMinimizeButton
+		{
+			render_bg {}
+			//image="graphics/win32_win_min"
+			inset="0 0 4 0"
+			//image="graphics/osx_win_dis"[$OSX]
+		}
+    
+    FrameMinimizeButton:hover
+		{  
+			render_bg {}
+			bgcolor="none"
+			inset="0 0 4 0"
+			//image="graphics/win32_win_min_hover"
+			//image="graphics/osx_min_hov" [$OSX]
+		}
+		
+		FrameMinimizeButton:framefocus [$OSX]
+		{
+			render_bg {}
+			inset="0 0 4 0"
+			//image="graphics/osx_min_def"
+		}
+				
+		FrameMinimizeButton:framefocus:hover [$OSX]
+		{
+			render_bg {}
+			inset="0 0 4 0"
+			//image="graphics/osx_min_hov"
+		}
 
 
+		// need the maximize button to have different styles for OSX & win32
+		FrameMaximizeButton
+		{
+			render_bg {}
+			inset="0 0 4 0"
+			//image="graphics/win32_win_max"
+			//image="graphics/osx_win_dis" [$OSX]
+		}
+
+		FrameMaximizeButton:hover
+		{
+			render_bg {}
+			inset="0 0 4 0"
+			bgcolor="none"
+			//image="graphics/win32_win_max_hover"
+			//image="graphics/osx_max_hov" [$OSX]
+		}
+
+		FrameMaximizeButton:framefocus
+		{
+			render_bg {}
+			inset="0 0 4 0"
+			bgcolor="none"
+			//image="graphics/win32_win_max"
+			//image="graphics/osx_max_def" [$OSX]
+		}
+
+		FrameMaximizeButton:framefocus:hover
+		{
+			render_bg {}
+			inset="0 0 4 0"
+			bgcolor="none"
+			//image="graphics/win32_win_max_hover"
+			//image="graphics/osx_max_hov" [$OSX]
+		}
+
+		FrameMaximizeButton:active
+		{
+			render_bg {}
+			inset="0 0 4 0"
+			bgcolor="none"
+			//image="graphics/win32_win_max_hover"
+			//image="graphics/osx_max_down" [$OSX]
+		}
+
+		// these are for when the maximize button becomes the restore button
+		FrameRestoreButton
+		{
+			render_bg {}
+			inset="0 0 4 0"
+			//image="graphics/win32_win_restore"
+			//image="graphics/osx_win_dis" [$OSX]
+		}
+
+		FrameRestoreButton:hover
+		{
+			render_bg {}
+			inset="0 0 4 0"
+			bgcolor="none"
+			//image="graphics/win32_win_restore_hover"
+			//image="graphics/osx_max_hov" [$OSX]
+		}
+
+		FrameRestoreButton:framefocus
+		{
+			render_bg {}
+			inset="0 0 4 0"
+			bgcolor="none"
+			//image="graphics/win32_win_restore"
+	    		//image="graphics/osx_max_def" [$OSX]
+		}
+
+		FrameRestoreButton:framefocus:hover
+		{
+			render_bg {}
+			inset="0 0 4 0"
+			bgcolor="none"
+			//image="graphics/win32_win_restore_hover"
+			//image="graphics/osx_max_hov" [$OSX]
+		}
+
+		FrameRestoreButton:active
+		{
+			render_bg {}
+			inset="0 0 4 0"
+			bgcolor="none"
+			//image="graphics/win32_win_restore_hover"
+			//image="graphics/osx_max_down" [$OSX]
+		}
+
+		FrameCloseButton
+		{
+			render_bg {}
+			inset="0 0 4 0"
+			//image="graphics/win32_win_close"
+			//image="graphics/osx_win_dis" [$OSX]
+		}
+
+		FrameCloseButton:hover
+		{
+			render_bg {}
+			inset="0 0 4 0"
+			//image="graphics/win32_win_close_hover"
+			//image="graphics/osx_close_hov" [$OSX]
+		}
+    
+    		FrameCloseButton:framefocus [$OSX]
+		{
+			render_bg {}
+			inset="0 0 4 0"
+			bgcolor="none"
+			//image="graphics/osx_close_def"
+		}
+
+		FrameCloseButton:framefocus:hover [$OSX]
+		{
+			render_bg {}
+			bgcolor="none"
+			//image="graphics/osx_close_hov"
+		}
+
+		FrameCloseButton:active [$OSX]
+		{
+			render_bg {}
+			inset="0 0 4 0"
+			bgcolor="none"
+			//image="graphics/osx_close_down"
+		}
+    
+    FrameCloseButton:disabled
+		{
+			render_bg {}
+			inset="0 0 4 0"
+			bgcolor="none"
+			//image="graphics/win32_win_close_disabled" 
+			//image="graphics/osx_win_dis" [$OSX]
+		}
+				
 	}
 	
 	colors
 	{
-		support_flag_red "169 72 71 255"
+		support_flag_red "baseInGame"
 		
-		support_hover_red1 "193 94 93 255"
-		support_hover_red2 "156 64 63 255"
-		
-		inbox_active_text "112 186 36 255"
-		inbox_inactive_text "191 191 191 255"
-
-		inbox_active "92 126 16 255"
-		inbox_active_hover1 "129 176 25 255"
-		inbox_active_hover2 "104 142 19 255"
-
-		inbox_inactive "38 38 37 255"
-		inbox_inactive_hover1 "92 89 86 255"
-		inbox_inactive_hover2 "77 75 72 255"
-
-		parental_lock_active1 "92 126 16 255"
-		parental_lock_active2 "51 49 48 255"	
-		parental_lock_active4 "122 145 71 255"
-		parental_lock_active5 "85 102 47 255"	
-
-		parental_lock_inactive1 "154 49 48 255"
-		parental_lock_inactive2 "189 79 79 255"	
-		parental_lock_inactive4 "146 72 71 255"
-		parental_lock_inactive5 "103 48 47 255"	
-
-		backdrop "black"
-		
-		disabledborder "black"
-
-
-		support_flag_red "169 72 71 255"
-		
-		support_hover_red1 "193 94 93 255"
-		support_hover_red2 "156 64 63 255"
+		support_hover_red1 "baseInGame"
+		support_hover_red2 "baseInGame"
 		
 		inbox_active_text "text"
 		inbox_inactive_text "labeldisabled"
 
-		backdrop "20 20 20 255"
+		backdrop "baseBackground"
 		
-		disabledborder "63 63 63 255"
-
+		disabledborder "baseBackground"
 	}
 	
 	layout
@@ -838,16 +1021,20 @@
 		place { control="UIStatusPanel" width=max height=40 align=bottom  margin-bottom=18 }
 		
 		place [!$OSX] { control="MenuBar" align=top margin-top=5 margin-left=2 }
+				
+		place [!$OSX] { control="account_balance, account_balance_seperator, account_URL, universe_label, startvr, exitvr, fullscreen" align=right margin-top=12 margin-right=88 spacing=7 }	
+		place [$OSX]  { control="account_balance, account_balance_seperator, account_URL, universe_label, startvr, exitvr, fullscreen" align=right margin-top=12 margin-right=15 spacing=7 }
+	
+		place [!$OSX] { control="fullscreen" align=right y=7 height=20 spacing=0 margin-right=78 margin-top=1 width=30 }
+		place [$OSX] { control="fullscreen" align=right y=7 height=20 spacing=0 margin-right=8 margin-top=1 width=30 }
 		
+		place [!$OSX] { control="startvr" end-right="fullscreen" align=right margin-right=6 margin-top=1 }
+		place [$OSX] { control="startvr" end-right="fullscreen" align=right margin-right=6 margin-top=1 }
+	
+		place [!$OSX] { control="exitvr" end-right="fullscreen" align=right margin-right=6 margin-top=1 }
+		place [$OSX] { control="exitvr" end-right="fullscreen" align=right margin-right=6 margin-top=1 }
 
-			
-		place [!$OSX] { control="account_balance, account_balance_seperator, account_URL, universe_label, fullscreen" align=right margin-top=12 margin-right=78 spacing=7 }	
-		place [$OSX]  { control="account_balance, account_balance_seperator, account_URL, universe_label, fullscreen" align=right margin-top=12 margin-right=15 spacing=7 }
-	
-		place [!$OSX] { control="fullscreen" tooltiptext="#tooltip_view_fullscreen" align=right y=7 height=0 spacing=0 margin-right=0 margin-top=1 width=0 region="bigpicture"}
-		place [$OSX] { control="fullscreen" tooltiptext="#tooltip_view_fullscreen" align=right y=7 height=0 spacing=0 margin-right=0 margin-top=1 width=0 region="bigpicture"}
-	
-		place { control="InboxButton" align=right end-right="account_balance" margin-top=4 margin-right=16 height=26 }
+  place { control="InboxButton" align=right end-right="account_balance" margin-top=4 margin-right=16 height=26 }
 		place { control="ParentalLockButton" align=right end-right="InboxButton" margin-top=7 margin-right=10 height=23 }
 		place { control="SupportAlert" align=right end-right="ParentalLockButton" margin-top=4 margin-right=10 height=26 }
 
@@ -856,7 +1043,7 @@
 
 		region { name=bottom align=bottom width=max height=75 }
 		
-		place { control="add_game" x=14 y=16 region=bottom height=0}
+		place { control="add_game" x=14 y=16 region=bottom height=30}
 
 		place { control="FriendPanel" height=48 width=48 region=bottom align=right margin-right=2 margin-top=16 }
 		place { control="view_friends" height=62 y=12 region=bottom align=right dir=right margin-right=56 }
