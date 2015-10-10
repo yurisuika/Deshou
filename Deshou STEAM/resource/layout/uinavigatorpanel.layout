@@ -30,6 +30,21 @@
 			command="Forward"
 		}
 
+		"refresh"
+		{
+			"ControlName"		"Button"
+			command="Refresh"
+			style="ReloadButton"
+			group="Refresh"
+		}
+		"Stop"
+		{
+			"ControlName"		"Button"
+			command="Stop"
+			style="StopButton"
+			group="stop"
+		}
+
 
 		"label_store"
 		{
@@ -850,6 +865,7 @@
 		place { control="library_filters_details,library_filters_list,library_filters_grid," align=right y=54 height=20 spacing=4 margin-right=9 width=20 }
 
  	  	place { control=emailreminderbar margin-top=81 margin-left=8 margin-right=8 width=max height=48 }
+		place { control=phonereminderbar margin-top=81 margin-left=8 margin-right=8 width=max height=80 }
 
 		// content pages - these are all pushed down by the email reminder bar (above) if it's visible
 		place { control=DownloadsPage 		width=max height=max margin-top=0 margin-left=0 margin-right=8 margin-bottom=20 start=emailreminderbar dir=down }
