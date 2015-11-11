@@ -21,7 +21,7 @@
 			"ControlName"		"RichText"
 			"maxchars"		"-1"
 			"ScrollBar"		"1"
-			style="ListPanel"
+			style="ChatListPanel"
 		}
 		"SendButton"
 		{
@@ -67,16 +67,7 @@
 
 	styles
 	{
-		CChatRoomDlg
-		{			
-			bgcolor="DialogBG"
-			render_bg
-			{
-				//0="fill( x0, y0, x1, y0+21, DialogBG )"
-			
-			}
-		}
-		
+	
 		label
 		{
 		font-size=11
@@ -92,25 +83,10 @@
 			render
 			{
 				// lines around
-				//0="fill( x0, y0 + 2, x0 + 1, y1 - 2, ButtonBorderDisabled )"
-				//1="fill(  x1 - 1, y0 + 2, x1, y1 - 2, ButtonBorderDisabled )"
-				//2="fill( x0 + 2, y0, x1 - 2, y0 + 1, ButtonBorderDisabled )"
-				//3="fill( x0 + 2, y1 - 1, x1 - 2, y1, ButtonBorderDisabled )"
-
-				// single pixel fills in the corners
-				//4="fill( x0 + 1, y0 + 1, x0 + 2, y0 + 2, ButtonBorderDisabled )"
-				//5="fill( x1 - 2, y0 + 1, x1 - 1, y0 + 2, ButtonBorderDisabled )"
-				//6="fill( x0 + 1, y1 - 2, x0 + 2, y1 - 1, ButtonBorderDisabled )"
-				//7="fill( x1 - 2, y1 - 2, x1 - 1, y1 - 1, ButtonBorderDisabled )"
-				//11="fill( x0, y0 + 1, x0 + 1, y0 + 2, ButtonBorderDisabled2 )"
-				//12="fill( x1 - 1, y0 + 1, x1, y0 + 2, ButtonBorderDisabled2 )"
-				//13="fill( x0, y1 - 2, x0 + 1, y1 - 1, ButtonBorderDisabled2 )"
-				//14="fill( x1 - 1, y1 - 2, x1, y1 - 1, ButtonBorderDisabled2 )"
-				//15="fill( x0 + 1, y0, x0 + 2, y0 + 1, ButtonBorderDisabled2 )"
-				//16="fill( x1 - 2, y0, x1 - 1, y0 + 1, ButtonBorderDisabled2 )"
-				//17="fill( x0 + 1, y1 - 1, x0 + 2, y1, ButtonBorderDisabled2 )"
-				//18="fill( x1 - 2, y1 - 1, x1 - 1, y1, ButtonBorderDisabled2 )"
-			
+				//0="fill( x0, y0, x0 + 1, y1, ButtonBorderDisabled )"
+				//1="fill(  x1 - 1, y0 + 1, x1, y1 - 1, ButtonBorderDisabled )"
+				//2="fill( x0 + 1, y0, x1, y0 + 1, ButtonBorderDisabled )"
+				//3="fill( x0, y1 - 1, x1, y1, ButtonBorderDisabled )"	
 			}     
 
 			font-size=11
@@ -120,29 +96,14 @@
 		{
 			padding-left=4
 			image="graphics/icon_emoticon"
-
-		render_bg
-		{
-			// lines around
-			//1="fill( x0 + 2, y0, x1 - 2, y0 + 1, ButtonBorder )"  // top
-			//2="fill( x0 + 2, y1 - 1, x1 - 2, y1, ButtonBorder )"  // bottom
-			//3="fill( x0, y0 + 2, x0 + 1, y1 - 2, ButtonBorder )"  // left
-			//4="fill( x1 - 1, y0 + 2, x1, y1 - 2, ButtonBorder )"  // right
-	
-			// single pixel fills in the corners
-			//5="fill( x0 + 1, y0 + 1, x0 + 2, y0 + 2, ButtonBorder )"
-			//6="fill( x1 - 2, y0 + 1, x1 - 1, y0 + 2, ButtonBorder )"
-			//7="fill( x0 + 1, y1 - 2, x0 + 2, y1 - 1, ButtonBorder )"
-			//8="fill( x1 - 2, y1 - 2, x1 - 1, y1 - 1, ButtonBorder )"
-			//9="fill( x0, y0 + 1, x0 + 1, y0 + 2, ButtonFace2 )"
-			//10="fill( x1 - 1, y0 + 1, x1, y0 + 2, ButtonFace2 )"
-			//11="fill( x0, y1 - 2, x0 + 1, y1 - 1, ButtonFace2 )"
-			//12="fill( x1 - 1, y1 - 2, x1, y1 - 1, ButtonFace2 )"
-			//13="fill( x0 + 1, y0, x0 + 2, y0 + 1, ButtonFace2 )"
-			//14="fill( x1 - 2, y0, x1 - 1, y0 + 1, ButtonFace2 )"
-			//15="fill( x0 + 1, y1 - 1, x0 + 2, y1, ButtonFace2 )"
-			//16="fill( x1 - 2, y1 - 1, x1 - 1, y1, ButtonFace2 )"
-		}
+			render_bg
+			{
+				// lines around
+				//0="fill( x0, y0, x0 + 1, y1, ButtonBorderDisabled )"
+				//1="fill(  x1 - 1, y0 + 1, x1, y1 - 1, ButtonBorderDisabled )"
+				//2="fill( x0 + 1, y0, x1, y0 + 1, ButtonBorderDisabled )"
+				//3="fill( x0, y1 - 1, x1, y1, ButtonBorderDisabled )"	
+			}
 		}
 
 		CEmoticonButton:hover
@@ -199,9 +160,9 @@
 		place { control="VoiceChat,ChatActionsButton" y=6 width=36 margin-right=8 align=right spacing=8 dir=right }
 		place { control="TitlePanel" margin-left=6 y=2 height=50 width=max margin-right=6 end-right=VoiceChat }
 		place { control="VoiceBar" y=34 height=24 width=max margin-left=8 margin-right=52 }
-		place { control="GameInviteBar,TradeInviteBar,ChatInfoBar" height=54 }
+		place { control="GameInviteBar,TradeInviteBar,ChatInfoBar,BIBar,BABar" height=54 }
 		
-		place { control="TradeInviteBar,GameInviteBar,ChatInfoBar,ChatHistory" y=60 margin-left=8 margin-right=8 width=max height=max align=right dir=down margin-bottom=74 spacing=3 }
+		place { control="TradeInviteBar,GameInviteBar,ChatInfoBar,BIBar,BABar,ChatHistory" y=60 margin-left=8 margin-right=8 width=max height=max align=right dir=down margin-bottom=74 spacing=3 }
 
 		region { name="chathistorybottom" y=60 margin-left=8 margin-right=8 width=max height=234 align=bottom margin-bottom=74 }
 		

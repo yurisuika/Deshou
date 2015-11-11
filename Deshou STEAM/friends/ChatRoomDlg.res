@@ -21,7 +21,7 @@
 			"ControlName"		"RichText"
 			"maxchars"		"-1"
 			"ScrollBar"		"1"
-			style="listpanel"
+			style="chatlistpanel"
 		}
 		"SendButton"
 		{
@@ -63,6 +63,10 @@
 			style="Chat_MenuButton_withChrome"
 			
 		}
+		"EmoticonButton"
+		{
+			"ControlName"		"CEmoticonButton"
+		}
 	}
 		
 	styles
@@ -70,38 +74,36 @@
 		CChatRoomDlg
 		{			
 			bgcolor="DialogBG"
+
 			render_bg
 			{
-				//0="fill( x0, y0, x1, y0+21, DialogBG )"	
+
 			}
-
-		}	
+			render
+			{
 		
-
+				//gradient to obscure content at bottom of scrolling region 
+				//2="gradient( x0+9, y1 -88, x1-230, y1-74, none, almostblack )"
+			}
+		}
+		
+		ChatListPanel
+		{	
+		render_bg
+			{
+						 //0="gradient( x0 +1, y0, x1 -1, y1, darkdialogbg, almostblack )"
+			}
+		}
 		
 		"Textentryfocus_chat"
 		{
 			render
 			{
 				// lines around
-				//0="fill( x0, y0 + 1, x0 + 1, y1 - 1, ButtonBorderDisabled )"
-				//1="fill(  x1 - 1, y0 + 1, x1, y1 - 1, ButtonBorderDisabled )"
+				//0="fill( x0, y0, x0 + 1, y1, ButtonBorderDisabled )"
+				//1="fill(  x1 - 1, y0, x1, y1, ButtonBorderDisabled )"
 				//2="fill( x0 + 1, y0, x1 - 1, y0 + 1, ButtonBorderDisabled )"
 				//3="fill( x0 + 1, y1 - 1, x1 - 1, y1, ButtonBorderDisabled )"
-
-				// single pixel fills in the corners
-				//4="fill( x0 + 1, y0 + 1, x0 + 2, y0 + 2, ButtonBorderDisabled )"
-				//5="fill( x1 - 2, y0 + 1, x1 - 1, y0 + 2, ButtonBorderDisabled )"
-				//6="fill( x0 + 1, y1 - 2, x0 + 2, y1 - 1, ButtonBorderDisabled )"
-				//7="fill( x1 - 2, y1 - 2, x1 - 1, y1 - 1, ButtonBorderDisabled )"
-				//11="fill( x0, y0 + 1, x0 + 1, y0 + 2, ButtonBorderDisabled2 )"
-				//12="fill( x1 - 1, y0 + 1, x1, y0 + 2, ButtonBorderDisabled2 )"
-				//13="fill( x0, y1 - 2, x0 + 1, y1 - 1, ButtonBorderDisabled2 )"
-				//14="fill( x1 - 1, y1 - 2, x1, y1 - 1, ButtonBorderDisabled2 )"
-				//15="fill( x0 + 1, y0, x0 + 2, y0 + 1, ButtonBorderDisabled2 )"
-				//16="fill( x1 - 2, y0, x1 - 1, y0 + 1, ButtonBorderDisabled2 )"
-				//17="fill( x0 + 1, y1 - 1, x0 + 2, y1, ButtonBorderDisabled2 )"
-				//18="fill( x1 - 2, y1 - 1, x1 - 1, y1, ButtonBorderDisabled2 )"
 				
 			}
 			font-size=11
@@ -121,6 +123,50 @@
 		{
 			image="graphics/mega_btn_on"
 		}
+
+		CEmoticonButton
+		{
+			padding-left=4
+			image="graphics/icon_emoticon"
+			render_bg
+			{
+				// lines around
+				//1="fill( x0, y0, x1, y0 + 1, ButtonBorder )"  // top
+				//2="fill( x0, y1 - 1, x1, y1, ButtonBorder )"  // bottom
+				//3="fill( x0, y0, x0 + 1, y1, ButtonBorder )"  // left
+				//4="fill( x1 - 1, y0, x1, y1, ButtonBorder )"  // right
+	
+
+			}
+		}
+
+		CEmoticonButton:hover
+		{
+			image="graphics/icon_emoticon_hover"
+		}
+
+		CEmoticonButton:selected
+		{
+			image="graphics/icon_emoticon_hover"
+		}
+
+		EmoticonMenuItemStyle
+		{
+			font-size=11
+			bgcolor=none
+		}
+		
+		EmoticonMenuItemStyle:hover
+		{
+			textcolor=white
+			bgcolor=none
+		}
+		
+		EmoticonMenuItemStyle:selected
+		{
+			textcolor=white
+			bgcolor=none
+		}
 	}
 	
 	layout
@@ -134,8 +180,8 @@
 		place { control="ChatHistory" y=60 margin-left=8 margin-right=8 width=max height=max align=right dir=down margin-bottom=74 end-right=UserList }
 		
 		region { name=bottomrow align=bottom height=76 }
-		place { control="SendButton" region=bottomrow height=42 align=right margin-right=8 margin-top=8 }
-		place { control="TextEntry" region=bottomrow end-right="SendButton" height=42 width=max margin-right=8 margin-right=8 margin-left=8 margin-top=8 }
+		place { control="EmoticonButton,SendButton" region=bottomrow spacing=8 height=42 align=right margin-top=8 margin-right=8 }
+		place { control="TextEntry" region=bottomrow end-right="EmoticonButton" height=42 width=max margin-right=8 margin-right=8 margin-left=8 margin-top=8 }
 		place { control="StatusLabel" region=bottomrow align=bottom width=max margin-left=8 margin-bottom=7 }
 	}
 }
