@@ -23,14 +23,14 @@
 	{
 		dlcdetails 
 		{ 
-			bgcolor=Background
+			bgcolor=BackgroundStart
 		}
 
 		bodycontent
 		{
 			textcolor="Label"
 			selectedtextcolor="Label"	
-			font-size=12
+			font-size=11
 			render_bg {}
 		}
 
