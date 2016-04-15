@@ -29,7 +29,7 @@
 			{
 				// background fill
 				//0="fill( x0, y0, x1 - 1, y1 - 1, propertysheetbg )"
-				//1="image(x0 + 6, y0 + 7, x1, y1 - 1, graphics/new_tab)"	
+				1="image(x0 + 6, y0 + 7, x1, y1 - 1, graphics/new_tab)"	
 			}
 	  }
 	  
@@ -39,7 +39,7 @@
 			{
 				// background fill
 				//0="fill( x0, y0, x1 - 1, y1 - 1, buttonfaceactive )"	
-				//1="image(x0 + 6, y0 + 7, x1, y1 - 1, graphics/new_tab)"				
+				1="image(x0 + 6, y0 + 7, x1, y1 - 1, graphics/new_tab)"				
 			}
 		}
 
