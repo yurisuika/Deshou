@@ -28,7 +28,7 @@ IntroHeading
 font-family=basefont
 bgcolor="none"
 font-size="11"
-textcolor="headercolor"
+textcolor="Text"
 padding-top="0"
 font-weight="normal"
 }
@@ -41,7 +41,7 @@ textcolor="text"
 
 PermissionOption
 {
-textcolor="grey"
+textcolor="Text"
 }
 
 ViewerRequest
