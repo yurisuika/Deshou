@@ -17,7 +17,7 @@
 	{
 		CDetailsGameSubHeaderPanel
 		{
-			bgcolor=DarkDialogBGTransparent
+			bgcolor=DarkDialogBG
 		}
 		
 		

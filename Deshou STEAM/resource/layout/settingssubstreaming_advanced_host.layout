@@ -9,11 +9,27 @@
 			wrap=1
 			labelText="#Steam_Settings_Streaming_AdvancedHostOptions_Description"
 		}
+		
+		"ChangeDesktopResolution" { ControlName="CheckButton" fieldName="ChangeDesktopResolution" labelText="#Steam_Settings_Streaming_ChangeDesktopResolution" }
+		
+		"DynamicallyAdjustResolution" { ControlName="CheckButton" fieldName="DynamicallyAdjustResolution" labelText="#Steam_Settings_Streaming_DynamicallyAdjustResolution" }
+
+		"EnableCaptureNVFBC" { ControlName="CheckButton" fieldName="EnableCaptureNVFBC" labelText="#Steam_Settings_Streaming_EnableCaptureNVFBC" }
 
 		"EnableHardwareEncoding" { ControlName="CheckButton" fieldName="EnableHardwareEncoding" labelText="#Steam_Settings_Streaming_EnableHardwareEncoding" }
-
-		"EnableDWMCapture" { ControlName="CheckButton" fieldName="EnableDWMCapture" labelText="#Steam_Settings_Streaming_EnableDWMCapture" }
+		"EnableHardwareEncodingNVIDIA" { ControlName="CheckButton" fieldName="EnableHardwareEncodingNVIDIA" labelText="#Steam_Settings_Streaming_EnableHardwareEncodingNVIDIA" }
+		"EnableHardwareEncodingAMD" { ControlName="CheckButton" fieldName="EnableHardwareEncodingAMD" labelText="#Steam_Settings_Streaming_EnableHardwareEncodingAMD" }
+		"EnableHardwareEncodingIntel" { ControlName="CheckButton" fieldName="EnableHardwareEncodingIntel" labelText="#Steam_Settings_Streaming_EnableHardwareEncodingIntel" }
 		
+		"SoftwareEncodingThreadsLabel"
+		{
+			ControlName="Label"
+			fieldName="SoftwareEncodingThreadsLabel"
+			wrap=1
+			labelText="#Steam_Settings_Streaming_SoftwareEncodingThreads_Description"
+		}
+		"SoftwareEncodingThreads" { ControlName="ComboBox" fieldName="SoftwareEncodingThreads" style="ResolutionLimit" editable="0" }
+
 		"EnableTrafficPriorityLabel"
 		{
 			ControlName="Label"
@@ -44,15 +60,49 @@
 	
 		place
 		{
-			control="DescriptionLabel,EnableHardwareEncoding,EnableDWMCapture,EnableTrafficPriorityLabel,EnableTrafficPriority"
+			control="DescriptionLabel,ChangeDesktopResolution,DynamicallyAdjustResolution,EnableCaptureNVFBC,EnableHardwareEncoding"
 			dir=down
 			align=top
 			width=max
 			margin-left=20
 			margin-right=20
 			margin-top=40
-			spacing=10
+			spacing=5
 		}
+		place
+		{
+			control="EnableHardwareEncodingNVIDIA,EnableHardwareEncodingAMD,EnableHardwareEncodingIntel,EnableTrafficPriorityLabel,EnableTrafficPriority"
+			dir=down
+			align=top
+			width=max
+			margin-left=45
+			margin-right=20
+			margin-top=205
+			spacing=0
+		}
+		place
+		{
+			control="SoftwareEncodingThreadsLabel,SoftwareEncodingThreads"
+			dir=down
+			align=top
+			width=max
+			margin-left=20
+			margin-right=20
+			margin-top=305
+			spacing=0
+		}
+		place
+		{
+			control="EnableTrafficPriorityLabel,EnableTrafficPriority"
+			dir=down
+			align=top
+			width=max
+			margin-left=20
+			margin-right=20
+			margin-top=365
+			spacing=0
+		}
+		
 		place { control="SupportInformationLabel" region="buttons"
 						margin-left=20 margin-top=0
 						margin-bottom=2 spacing=10 }

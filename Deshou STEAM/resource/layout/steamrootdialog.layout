@@ -827,9 +827,9 @@
 		FrameMinimizeButton
 		{
 			render_bg {}
-			//image="graphics/win32_win_min"
+			image="graphics/win32_win_min"
 			inset="0 0 4 0"
-			//image="graphics/osx_win_dis"[$OSX]
+			image="graphics/osx_win_dis"[$OSX]
 		}
     
     FrameMinimizeButton:hover
@@ -837,22 +837,22 @@
 			render_bg {}
 			bgcolor="none"
 			inset="0 0 4 0"
-			//image="graphics/win32_win_min_hover"
-			//image="graphics/osx_min_hov" [$OSX]
+			image="graphics/win32_win_min_hover"
+			image="graphics/osx_min_hov" [$OSX]
 		}
 		
 		FrameMinimizeButton:framefocus [$OSX]
 		{
 			render_bg {}
 			inset="0 0 4 0"
-			//image="graphics/osx_min_def"
+			image="graphics/osx_min_def"
 		}
 				
 		FrameMinimizeButton:framefocus:hover [$OSX]
 		{
 			render_bg {}
 			inset="0 0 4 0"
-			//image="graphics/osx_min_hov"
+			image="graphics/osx_min_hov"
 		}
 
 
@@ -861,8 +861,8 @@
 		{
 			render_bg {}
 			inset="0 0 4 0"
-			//image="graphics/win32_win_max"
-			//image="graphics/osx_win_dis" [$OSX]
+			image="graphics/win32_win_max"
+			image="graphics/osx_win_dis" [$OSX]
 		}
 
 		FrameMaximizeButton:hover
@@ -870,8 +870,8 @@
 			render_bg {}
 			inset="0 0 4 0"
 			bgcolor="none"
-			//image="graphics/win32_win_max_hover"
-			//image="graphics/osx_max_hov" [$OSX]
+			image="graphics/win32_win_max_hover"
+			image="graphics/osx_max_hov" [$OSX]
 		}
 
 		FrameMaximizeButton:framefocus
@@ -879,8 +879,8 @@
 			render_bg {}
 			inset="0 0 4 0"
 			bgcolor="none"
-			//image="graphics/win32_win_max"
-			//image="graphics/osx_max_def" [$OSX]
+			image="graphics/win32_win_max"
+			image="graphics/osx_max_def" [$OSX]
 		}
 
 		FrameMaximizeButton:framefocus:hover
@@ -888,8 +888,8 @@
 			render_bg {}
 			inset="0 0 4 0"
 			bgcolor="none"
-			//image="graphics/win32_win_max_hover"
-			//image="graphics/osx_max_hov" [$OSX]
+			image="graphics/win32_win_max_hover"
+			image="graphics/osx_max_hov" [$OSX]
 		}
 
 		FrameMaximizeButton:active
@@ -897,8 +897,8 @@
 			render_bg {}
 			inset="0 0 4 0"
 			bgcolor="none"
-			//image="graphics/win32_win_max_hover"
-			//image="graphics/osx_max_down" [$OSX]
+			image="graphics/win32_win_max_hover"
+			image="graphics/osx_max_down" [$OSX]
 		}
 
 		// these are for when the maximize button becomes the restore button
@@ -906,8 +906,8 @@
 		{
 			render_bg {}
 			inset="0 0 4 0"
-			//image="graphics/win32_win_restore"
-			//image="graphics/osx_win_dis" [$OSX]
+			image="graphics/win32_win_restore"
+			image="graphics/osx_win_dis" [$OSX]
 		}
 
 		FrameRestoreButton:hover
@@ -915,8 +915,8 @@
 			render_bg {}
 			inset="0 0 4 0"
 			bgcolor="none"
-			//image="graphics/win32_win_restore_hover"
-			//image="graphics/osx_max_hov" [$OSX]
+			image="graphics/win32_win_restore_hover"
+			image="graphics/osx_max_hov" [$OSX]
 		}
 
 		FrameRestoreButton:framefocus
@@ -924,8 +924,8 @@
 			render_bg {}
 			inset="0 0 4 0"
 			bgcolor="none"
-			//image="graphics/win32_win_restore"
-	    		//image="graphics/osx_max_def" [$OSX]
+			image="graphics/win32_win_restore"
+	    	image="graphics/osx_max_def" [$OSX]
 		}
 
 		FrameRestoreButton:framefocus:hover
@@ -933,8 +933,8 @@
 			render_bg {}
 			inset="0 0 4 0"
 			bgcolor="none"
-			//image="graphics/win32_win_restore_hover"
-			//image="graphics/osx_max_hov" [$OSX]
+			image="graphics/win32_win_restore_hover"
+			image="graphics/osx_max_hov" [$OSX]
 		}
 
 		FrameRestoreButton:active
@@ -942,24 +942,24 @@
 			render_bg {}
 			inset="0 0 4 0"
 			bgcolor="none"
-			//image="graphics/win32_win_restore_hover"
-			//image="graphics/osx_max_down" [$OSX]
+			image="graphics/win32_win_restore_hover"
+			image="graphics/osx_max_down" [$OSX]
 		}
 
 		FrameCloseButton
 		{
 			render_bg {}
 			inset="0 0 4 0"
-			//image="graphics/win32_win_close"
-			//image="graphics/osx_win_dis" [$OSX]
+			image="graphics/win32_win_close"
+			image="graphics/osx_win_dis" [$OSX]
 		}
 
 		FrameCloseButton:hover
 		{
 			render_bg {}
 			inset="0 0 4 0"
-			//image="graphics/win32_win_close_hover"
-			//image="graphics/osx_close_hov" [$OSX]
+			image="graphics/win32_win_close_hover"
+			image="graphics/osx_close_hov" [$OSX]
 		}
     
     		FrameCloseButton:framefocus [$OSX]
@@ -967,14 +967,14 @@
 			render_bg {}
 			inset="0 0 4 0"
 			bgcolor="none"
-			//image="graphics/osx_close_def"
+			image="graphics/osx_close_def"
 		}
 
 		FrameCloseButton:framefocus:hover [$OSX]
 		{
 			render_bg {}
 			bgcolor="none"
-			//image="graphics/osx_close_hov"
+			image="graphics/osx_close_hov"
 		}
 
 		FrameCloseButton:active [$OSX]
@@ -982,7 +982,7 @@
 			render_bg {}
 			inset="0 0 4 0"
 			bgcolor="none"
-			//image="graphics/osx_close_down"
+			image="graphics/osx_close_down"
 		}
     
     FrameCloseButton:disabled
@@ -990,8 +990,8 @@
 			render_bg {}
 			inset="0 0 4 0"
 			bgcolor="none"
-			//image="graphics/win32_win_close_disabled" 
-			//image="graphics/osx_win_dis" [$OSX]
+			image="graphics/win32_win_close_disabled" 
+			image="graphics/osx_win_dis" [$OSX]
 		}
 				
 	}
