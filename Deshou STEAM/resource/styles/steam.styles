@@ -7,7 +7,7 @@ steam.styles
 
    // FORMAT THE FOLLOWING VALUES TO SET YOUR CUSTOM COLOURS!
 
-   baseBackground="51 51 51 255"
+   baseBackground="27 27 27 255"
    baseLight="204 202 202 255"
    baseDark="45 45 45 255"
    baseHighlight="217 191 194 255"
@@ -25,8 +25,8 @@ steam.styles
     
    // THESE ARE VALUES WHICH REQUIRE TRANSPARENCY!
 
-   DarkClientBGTransparent="51 51 51 19"
-   DarkDialogBGTransparent="51 51 51 170"
+   DarkClientBGTransparent="27 27 27 19"
+   DarkDialogBGTransparent="27 27 27 170"
 
    InGameColour192="169 141 155 192"
    OnlineColour192="217 191 194 192"
@@ -787,7 +787,7 @@ steam.styles
     {
       		bgcolor="black"
 		render_bg {}
-		//image="graphics/win32_win_min"
+		image="graphics/win32_win_min"
 		image="graphics/osx_win_dis" [$OSX]
     }
     
@@ -795,7 +795,7 @@ steam.styles
     {  
 		render_bg {}
       		bgcolor="black"
-		//image="graphics/win32_win_min_hover"
+		image="graphics/win32_win_min_hover"
 		image="graphics/osx_min_hov" [$OSX]
     }
 
@@ -825,7 +825,7 @@ steam.styles
     {
       		bgcolor="black"
 		render_bg {}
-		//image="graphics/win32_win_max"
+		image="graphics/win32_win_max"
 		image="graphics/osx_win_dis" [$OSX]
     }
 
@@ -833,7 +833,7 @@ steam.styles
     {
 		render_bg {}
       		bgcolor="black"
-		//image="graphics/win32_win_max_hover"
+		image="graphics/win32_win_max_hover"
 		image="graphics/osx_max_hov" [$OSX]
     }
 
@@ -841,7 +841,7 @@ steam.styles
     {
 		render_bg {}
       		bgcolor="black"
-		//image="graphics/win32_win_max"
+		image="graphics/win32_win_max"
 		image="graphics/osx_max_def" [$OSX]
     }
 
@@ -849,7 +849,7 @@ steam.styles
     {
 		render_bg {}
       		bgcolor="black"
-		//image="graphics/win32_win_max_hover"
+		image="graphics/win32_win_max_hover"
 		image="graphics/osx_max_hov" [$OSX]
     }
 
@@ -857,7 +857,7 @@ steam.styles
     {
 		render_bg {}
       		bgcolor="black"
-		//image="graphics/win32_win_max_hover"
+		image="graphics/win32_win_max_hover"
 		image="graphics/osx_max_down" [$OSX]
     }
 
@@ -866,7 +866,7 @@ steam.styles
     {
       		bgcolor="black"
 		render_bg {}
-		//image="graphics/win32_win_restore"
+		image="graphics/win32_win_restore"
 		image="graphics/osx_win_dis" [$OSX]
     }
 
@@ -874,7 +874,7 @@ steam.styles
     {
 		render_bg {}
       		bgcolor="black"
-		//image="graphics/win32_win_restore_hover"
+		image="graphics/win32_win_restore_hover"
 		image="graphics/osx_max_hov" [$OSX]
     }
 
@@ -882,7 +882,7 @@ steam.styles
     {
 		render_bg {}
       		bgcolor="black"
-		//image="graphics/win32_win_restore"
+		image="graphics/win32_win_restore"
     		image="graphics/osx_max_def" [$OSX]
     }
 
@@ -890,7 +890,7 @@ steam.styles
     {
 		render_bg {}
       		bgcolor="black"
-		//image="graphics/win32_win_restore_hover"
+		image="graphics/win32_win_restore_hover"
 		image="graphics/osx_max_hov" [$OSX]
     }
 
@@ -898,7 +898,7 @@ steam.styles
     {
 		render_bg {}
       		bgcolor="black"
-		//image="graphics/win32_win_restore_hover"
+		image="graphics/win32_win_restore_hover"
 		image="graphics/osx_max_down" [$OSX]
     }
 
@@ -906,7 +906,7 @@ steam.styles
     {
       		bgcolor="black"
 		render_bg {}
-		//image="graphics/win32_win_close"
+		image="graphics/win32_win_close"
 		image="graphics/osx_win_dis" [$OSX]
     }
 
@@ -914,7 +914,7 @@ steam.styles
     {
 		render_bg {}
       		bgcolor="black"
-		//image="graphics/win32_win_close_hover"
+		image="graphics/win32_win_close_hover"
 		image="graphics/osx_close_hov" [$OSX]
     }
     
@@ -943,7 +943,7 @@ steam.styles
     {
 		render_bg {}
       		bgcolor="black"
-		//image="graphics/win32_win_close_disabled" 
+		image="graphics/win32_win_close_disabled" 
 		image="graphics/osx_win_dis" [$OSX]
     }
 
